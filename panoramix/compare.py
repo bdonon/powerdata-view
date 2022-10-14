@@ -1,4 +1,4 @@
-from panoramix.plot import plot_float_summary, plot_float_correlation, plot_bool_correlation, plot_bool_summary
+from panoramix.plot import plot_float_summary, plot_float_summary_grid, plot_float_correlation, plot_bool_correlation, plot_bool_summary
 from panoramix.metrics import load_multiple_metrics
 from panoramix.utils import slugify, make_dir
 from tabulate import tabulate
@@ -67,32 +67,23 @@ def display_table(key, df, path, statistics="summary", **kwargs):
             f.write(tabulate(table, headers='keys', tablefmt='latex', numalign="right", disable_numparse=True))
 
 
-def display_plot(key, df, path, statistics="summary", figsize=None, dpi=50, colors=plt.cm.tab10, dark=False, **kwargs):
+def display_plot(key, df, path, statistics="summary", dark=False, **kwargs):
     """Displays comparison plots. Depends on the desired statistics (summary or correlation), and on the data type."""
-    figsize = [6.4, 4.8] if figsize is None else figsize
+
     plt.style.use('dark_background') if dark else plt.style.use('default')
-
-    fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
-
-    ax.set_title(key)
-
     data_type = df.stack().dtype
     if data_type == 'bool':
         if statistics == "summary":
-            plot_bool_summary(df, ax, colors)
+            plot_bool_summary(df, key, path, **kwargs)
         elif statistics == "correlation":
-            plot_bool_correlation(df, fig, ax)
+            plot_bool_correlation(df, key, path, **kwargs)
     elif data_type == 'float':
         if statistics == "summary":
-            plot_float_summary(df, ax, colors)
+            plot_float_summary(df, key, path, **kwargs)
+            plot_float_summary_grid(df, key, path, **kwargs)
         elif statistics == "correlation":
-            plot_float_correlation(df, ax)
+            plot_float_correlation(df, key, path, **kwargs)
 
-    plt.tight_layout()
-    if path is not None:
-        plt.savefig(os.path.join(path, slugify(key)+'.png'))
-    plt.show()
-    print('\n')
 
 
 def compare_simple(df_dict, path, display="table", **kwargs):

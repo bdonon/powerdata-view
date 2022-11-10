@@ -72,7 +72,7 @@ def display_plot(key, df, path, statistics="summary", dark=False, **kwargs):
 
     plt.style.use('dark_background') if dark else plt.style.use('default')
     data_type = df.stack().dtype
-    if data_type == 'bool':
+    if data_type in ['bool', 'object']:
         if statistics == "summary":
             plot_bool_summary(df, key, path, **kwargs)
         elif statistics == "correlation":

@@ -39,7 +39,7 @@ class AbstractProblem(ABC):
     def add_assessment_row(self, file, table_dict):
         """Imports and simulates a file, computes metrics and appends them to table_dict."""
         net = self.backend.load_network(file)
-        self.backend.run_network(net)
+        self.backend.run_network(net, enforce_q_lims=True, delta_q=0.)
         values = self.backend.get_data_network(net, self.data_structure)
         for key, metrics in self.metrics_dict.items():
             table_dict[key].append(metrics(values))

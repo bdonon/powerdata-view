@@ -1,0 +1,52 @@
+{
+  "problem_name": "PandaPowerVoltageControl",
+  "dataset_versions": {
+    "Easy": {
+      "path":  "../powerdatagen/data/case60nordic_initialized_easy/train",
+      "color": "tab:green"
+    },
+    "Medium": {
+      "path":  "../powerdatagen/data/case60nordic_initialized_medium/train",
+      "color": "tab:orange"
+    },
+    "Hard": {
+      "path":  "../powerdatagen/data/case60nordic_initialized_hard/train",
+      "color": "tab:red"
+    },
+    "Easy Cond.": {
+      "path":  "../powerdatagen/data/case60nordic_condenser_easy/train",
+      "color": "tab:green"
+    },
+    "Medium Cond.": {
+      "path":  "../powerdatagen/data/case60nordic_condenser_medium/train",
+      "color": "tab:orange"
+    },
+    "Hard Cond.": {
+      "path":  "../powerdatagen/data/case60nordic_condenser_hard/train",
+      "color": "tab:red"
+    },
+    "Easy Red.": {
+      "path":  "../powerdatagen/data/case60nordic_reduced_easy/train",
+      "color": "tab:green"
+    },
+    "Medium Red.": {
+      "path":  "../powerdatagen/data/case60nordic_reduced_medium/train",
+      "color": "tab:orange"
+    },
+    "Hard Red.": {
+      "path":  "../powerdatagen/data/case60nordic_reduced_hard/train",
+      "color": "tab:red"
+    }
+  },
+  "output_dir": "output/tmp",
+  "modes": {
+    "focus_modes": ["all"],
+    "display_modes": ["plot"],
+    "statistics_modes": ["summary", "correlation"]
+  },
+  "figure_settings": {
+    "dark": true,
+    "figsize": [8, 8],
+    "dpi": 500
+  }
+}

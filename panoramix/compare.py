@@ -38,7 +38,7 @@ def display_table(key, df, path, statistics="summary"):
             f.write(tabulate(table, headers='keys', tablefmt='latex', numalign="right", disable_numparse=True))
 
 
-def display_plot(key, df, path, statistics="summary", **kwargs):
+def display_plot(key, color_dict, df, path, statistics="summary", val_range=None, **kwargs):
     """Displays comparison plots. Depends on the desired statistics (summary or correlation), and on the data type."""
 
     dark = kwargs.get("dark", False)
@@ -46,7 +46,7 @@ def display_plot(key, df, path, statistics="summary", **kwargs):
         plt.style.use('dark_background')
     figsize = kwargs.get("figsize", [6.4, 4.8])
     dpi = kwargs.get("dpi", 50)
-    colors = plt.cm.tab10
+    colors = [color_dict[dataset_name] for dataset_name in df.columns]#plt.cm.tab10
 
     data_type = df.stack().dtype
     if data_type in ['bool', 'object']:
@@ -57,9 +57,11 @@ def display_plot(key, df, path, statistics="summary", **kwargs):
             #plot_bool_correlation(df, key, path, figsize, dpi, colors)
     elif data_type == 'float':
         if statistics == "summary":
-            plot_float_summary(df, key, path, figsize, dpi, colors)
-            plot_float_summary_grid(df, key, path, figsize, dpi, colors)
-            plot_float_summary_boxplot(df, key, path, figsize, dpi, colors)
+            plot_float_summary(df, val_range, key, path, figsize, dpi, colors, log=True)
+            plot_float_summary(df, val_range, key, path, figsize, dpi, colors, log=False)
+            plot_float_summary_grid(df, val_range, key, path, figsize, dpi, colors, log=True)
+            plot_float_summary_grid(df, val_range, key, path, figsize, dpi, colors, log=False)
+            plot_float_summary_boxplot(df, val_range, key, path, figsize, dpi, colors)
         elif statistics == "correlation":
             plot_float_correlation(df, key, path, figsize, dpi, colors, dark)
 
@@ -76,32 +78,38 @@ def aggregate_versions(metrics_name, df_dict, focus="all"):
     snapshot_list = list(next(iter(df_dict.values())).index.values)
 
     out = {}
+    val_range = {}
+    tmp = pd.concat([pd.DataFrame(data=v.stack(), columns=[k]) for k, v in df_dict.items()], axis=1)
+    _min, _max = 1.*tmp.min().min(), 1.*tmp.max().max()
     if focus == "all":
         out[metrics_name] = pd.concat([pd.DataFrame(data=v.stack(), columns=[k]) for k, v in df_dict.items()], axis=1)
+        val_range[metrics_name] = [_min - 0.1 * (_max - _min), _max + 0.1 * (_max - _min)]
     elif focus == "snapshot":
         for snapshot_name in snapshot_list:
             out[metrics_name+' - '+snapshot_name] = pd.DataFrame({k: v.loc[snapshot_name] for k, v in df_dict.items()})
+            val_range[metrics_name+' - '+snapshot_name] = [_min - 0.1 * (_max - _min), _max + 0.1 * (_max - _min)]
     elif focus == "object":
         for object_name in object_list:
             out[metrics_name+' - '+object_name] = pd.DataFrame({k: v[object_name] for k, v in df_dict.items()})
-    return out
+            val_range[metrics_name + ' - ' + object_name] = [_min - 0.1 * (_max - _min), _max + 0.1 * (_max - _min)]
+    return out, val_range
 
 
-def compare_simple(df_dict_dict, path, display="table", statistics="summary", focus="all", **kwargs):
+def compare_simple(df_dict_dict, color_dict, path, display="table", statistics="summary", focus="all", **kwargs):
     """Compares features for a single tuple (display, statistics, focus)."""
     pbar = tqdm.tqdm(df_dict_dict.items())
     for metrics_name, df_dict in pbar:
         pbar.set_description('            Processing {}'.format(metrics_name))
         metrics_path = make_dir(path, metrics_name)
-        aggregate_dict = aggregate_versions(metrics_name, df_dict, focus=focus)
+        aggregate_dict, val_range = aggregate_versions(metrics_name, df_dict, focus=focus)
         for aggregate_name, aggregate_df in aggregate_dict.items():
             if display == "table":
                 display_table(aggregate_name, aggregate_df, metrics_path, statistics=statistics)
             elif display == "plot":
-                display_plot(aggregate_name, aggregate_df, metrics_path, statistics=statistics, **kwargs)
+                display_plot(aggregate_name, color_dict, aggregate_df, metrics_path, statistics=statistics, val_range=val_range[aggregate_name], **kwargs)
 
 
-def compare_exhaustive(df_dict_dict, save_path, display_modes=None, statistics_modes=None, focus_modes=None, **kwargs):
+def compare_exhaustive(df_dict_dict, color_dict, save_path, display_modes=None, statistics_modes=None, focus_modes=None, **kwargs):
     """Compares multiple metrics dataframe together and store the resulting tables / plots."""
 
     if display_modes is None:
@@ -120,4 +128,4 @@ def compare_exhaustive(df_dict_dict, save_path, display_modes=None, statistics_m
             for focus in focus_modes:
                 print("        Focus = {}".format(focus))
                 focus_path = make_dir(statistics_path, focus)
-                compare_simple(df_dict_dict, focus_path, display=display, statistics=statistics, focus=focus, **kwargs)
+                compare_simple(df_dict_dict, color_dict, focus_path, display=display, statistics=statistics, focus=focus, **kwargs)

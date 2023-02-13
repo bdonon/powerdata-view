@@ -41,10 +41,11 @@ def load_metrics(path):
     return df_dict
 
 
-def load_multiple_metrics(paths_to_dataset_versions, problem_name):
+def load_multiple_metrics(dataset_versions, problem_name):
     """Loads one dictionary of metrics dataframes per dataset version."""
     out = {}
-    for version_name, version_path in paths_to_dataset_versions.items():
+    for version_name, version_dict in dataset_versions.items():
+        version_path = version_dict["path"]
         metrics_dir = os.path.join(version_path, problem_name)
         out[version_name] = load_metrics(metrics_dir)
     return {mn: {vn: out[vn][mn] for vn in out.keys()} for mn in next(iter(out.values())).keys()}

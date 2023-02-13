@@ -9,7 +9,8 @@ python main.py --config_file=config/config.json
 
 Options should be specified in the `config.json` file:
 - `"problem_name"`: Name of a problem instance. For now, only `"PandaPowerVoltageControl"` is available.
-- `"paths_to_dataset_versions"`: Dictionary of paths to dataset versions. Keys will be used as figure titles.
+- `"dataset_versions"`: Dictionary of dataset versions. Keys will be used as figure titles. Values
+  should be dictionaries with `"path"` and `"color"` keys.
 - `"output_dir"`: Path to an output directory.
 - `"modes`: Dictionary of modes.
   - `"focus_modes"`: List of requested focus modes. By default, set to `["all", "object", "snapshot"]`.

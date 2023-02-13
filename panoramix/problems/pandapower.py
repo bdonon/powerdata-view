@@ -45,9 +45,15 @@ class PandaPowerVoltageControl(AbstractProblem):
             "Buses with Illicit Voltage": bus_illicit_voltage,
             "Buses with Illicit Voltage, eps=0.05": bus_illicit_voltage_005,
             "Buses with Illicit Voltage, eps=0.1": bus_illicit_voltage_01,
+            "Buses with Illicit Voltage, eps=0.25": bus_illicit_voltage_025,
+            "Buses with Illicit Voltage, eps=-0.05": bus_illicit_voltage_m005,
+            "Buses with Illicit Voltage, eps=-0.1": bus_illicit_voltage_m01,
             "Snapshots with Illicit Voltage": snapshots_illicit_voltage,
             "Snapshots with Illicit Voltage, eps=0.05": snapshots_illicit_voltage_005,
             "Snapshots with Illicit Voltage, eps=0.1": snapshots_illicit_voltage_01,
+            "Snapshots with Illicit Voltage, eps=0.25": snapshots_illicit_voltage_025,
+            "Snapshots with Illicit Voltage, eps=-0.05": snapshots_illicit_voltage_m005,
+            "Snapshots with Illicit Voltage, eps=-0.1": snapshots_illicit_voltage_m01,
             # Branch loading
             "Line Loading Percent (%)": line_loading_percent,
             "Transformer Loading Percent (%)": trafo_loading_percent,
@@ -55,9 +61,13 @@ class PandaPowerVoltageControl(AbstractProblem):
             "Branches with Illicit Current": branch_illicit_current,
             "Branches with Illicit Current, eps=0.05": branch_illicit_current_005,
             "Branches with Illicit Current, eps=0.1": branch_illicit_current_01,
+            "Branches with Illicit Current, eps=-0.05": branch_illicit_current_m005,
+            "Branches with Illicit Current, eps=-0.1": branch_illicit_current_m01,
             "Snapshots with Illicit Current": snapshots_illicit_current,
             "Snapshots with Illicit Current, eps=0.05": snapshots_illicit_current_005,
             "Snapshots with Illicit Current, eps=0.1": snapshots_illicit_current_01,
+            "Snapshots with Illicit Current, eps=-0.05": snapshots_illicit_current_m005,
+            "Snapshots with Illicit Current, eps=-0.1": snapshots_illicit_current_m01,
             # Reactive Generation
             "Generator Reactive Power (MVAr)": generator_reactive_power,
             "Generator Normalized Reactive Power": generator_normalized_reactive_power,
@@ -66,6 +76,8 @@ class PandaPowerVoltageControl(AbstractProblem):
             "Generators with Illicit Reactive Power": generator_illicit_reactive_power,
             "Generators with Illicit Reactive Power, eps=0.05": generator_illicit_reactive_power_005,
             "Generators with Illicit Reactive Power, eps=0.1": generator_illicit_reactive_power_01,
+            "Generators with Illicit Reactive Power, eps=-0.05": generator_illicit_reactive_power_m005,
+            "Generators with Illicit Reactive Power, eps=-0.1": generator_illicit_reactive_power_m01,
             "Snapshots with Illicit Reactive Power": snapshots_illicit_reactive_power,
             "Snapshots with Illicit Reactive Power, eps=0.05": snapshots_illicit_reactive_power_005,
             "Snapshots with Illicit Reactive Power, eps=0.1": snapshots_illicit_reactive_power_01,
@@ -73,6 +85,8 @@ class PandaPowerVoltageControl(AbstractProblem):
             "Snapshots with Illicit Values": snapshots_illicit_values,
             "Snapshots with Illicit Values, eps=0.05": snapshots_illicit_values_005,
             "Snapshots with Illicit Values, eps=0.1": snapshots_illicit_values_01,
+            "Snapshots with Illicit Values, eps=-0.05": snapshots_illicit_values_m005,
+            "Snapshots with Illicit Values, eps=-0.1": snapshots_illicit_values_m01,
             # Object disconnections
             "Line N-1": line_n1,
             "Line N-2": line_n2,
@@ -155,6 +169,23 @@ def bus_illicit_voltage_01(values):
     v_normalized, bus_name = bus_normalized_voltage(values)
     return (v_normalized < 0.1) | (v_normalized > 0.9), bus_name
 
+def bus_illicit_voltage_025(values):
+    """Buses whose voltages are out of their authorized range, with 1O% less on both sides."""
+    v_normalized, bus_name = bus_normalized_voltage(values)
+    return (v_normalized < 0.25) | (v_normalized > 0.75), bus_name
+
+
+def bus_illicit_voltage_m005(values):
+    """Buses whose voltages are out of their authorized range, with 5% more on both sides."""
+    v_normalized, bus_name = bus_normalized_voltage(values)
+    return (v_normalized < -0.05) | (v_normalized > 1.05), bus_name
+
+
+def bus_illicit_voltage_m01(values):
+    """Buses whose voltages are out of their authorized range, with 1O% more on both sides."""
+    v_normalized, bus_name = bus_normalized_voltage(values)
+    return (v_normalized < -0.1) | (v_normalized > 1.1), bus_name
+
 
 def snapshots_illicit_voltage(values):
     """Snapshots with at least one illicit voltage."""
@@ -171,6 +202,23 @@ def snapshots_illicit_voltage_005(values):
 def snapshots_illicit_voltage_01(values):
     """Snapshots with at least one illicit voltage, with a range 10% smaller on both sides."""
     illicit_bus_voltages, _ = bus_illicit_voltage_01(values)
+    return illicit_bus_voltages.any(), '0'
+
+def snapshots_illicit_voltage_025(values):
+    """Snapshots with at least one illicit voltage, with a range 10% smaller on both sides."""
+    illicit_bus_voltages, _ = bus_illicit_voltage_025(values)
+    return illicit_bus_voltages.any(), '0'
+
+
+def snapshots_illicit_voltage_m005(values):
+    """Snapshots with at least one illicit voltage, with a range 5% smaller on both sides."""
+    illicit_bus_voltages, _ = bus_illicit_voltage_m005(values)
+    return illicit_bus_voltages.any(), '0'
+
+
+def snapshots_illicit_voltage_m01(values):
+    """Snapshots with at least one illicit voltage, with a range 10% smaller on both sides."""
+    illicit_bus_voltages, _ = bus_illicit_voltage_m01(values)
     return illicit_bus_voltages.any(), '0'
 
 
@@ -209,6 +257,18 @@ def branch_illicit_current_01(values):
     return i_normalized > 0.9, branch_name
 
 
+def branch_illicit_current_m005(values):
+    """Branches with illicit currents w.r.t. 105% of their thermal limits."""
+    i_normalized, branch_name = branch_normalized_current(values)
+    return i_normalized > 1.05, branch_name
+
+
+def branch_illicit_current_m01(values):
+    """Branches with illicit currents w.r.t. 110% of their thermal limits."""
+    i_normalized, branch_name = branch_normalized_current(values)
+    return i_normalized > 1.1, branch_name
+
+
 def snapshots_illicit_current(values):
     """Snapshots with at least one illicit current."""
     illicit_current, _ = branch_illicit_current(values)
@@ -224,6 +284,18 @@ def snapshots_illicit_current_005(values):
 def snapshots_illicit_current_01(values):
     """Snapshots with at least one illicit current, with a range 10% smaller on both sides."""
     illicit_current, _ = branch_illicit_current_01(values)
+    return illicit_current.any(), "0"
+
+
+def snapshots_illicit_current_m005(values):
+    """Snapshots with at least one illicit current, with a range 5% smaller on both sides."""
+    illicit_current, _ = branch_illicit_current_m005(values)
+    return illicit_current.any(), "0"
+
+
+def snapshots_illicit_current_m01(values):
+    """Snapshots with at least one illicit current, with a range 10% smaller on both sides."""
+    illicit_current, _ = branch_illicit_current_m01(values)
     return illicit_current.any(), "0"
 
 
@@ -243,32 +315,44 @@ def generator_normalized_reactive_power(values):
 
 def generator_over_reactive_power(values):
     """Generators with a reactive power larger than their maximal authorized value."""
-    q_normalized, gen_name = bus_normalized_voltage(values)
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
     return q_normalized > 1., gen_name
 
 
 def generator_under_reactive_power(values):
     """Generators with a reactive power smaller than their minimal authorized value."""
-    q_normalized, gen_name = bus_normalized_voltage(values)
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
     return q_normalized < 0., gen_name
 
 
 def generator_illicit_reactive_power(values):
     """Generators with reactive power out of their authorized value."""
-    q_normalized, gen_name = bus_normalized_voltage(values)
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
     return (q_normalized < 0.) | (q_normalized > 1.), gen_name
 
 
 def generator_illicit_reactive_power_005(values):
     """Generators with reactive power out of their authorized value, with a range 5% smaller on both sides."""
-    q_normalized, gen_name = bus_normalized_voltage(values)
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
     return (q_normalized < 0.05) | (q_normalized > 0.95), gen_name
 
 
 def generator_illicit_reactive_power_01(values):
     """Generators with reactive power out of their authorized value, with a range 10% smaller on both sides."""
-    q_normalized, gen_name = bus_normalized_voltage(values)
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
     return (q_normalized < 0.1) | (q_normalized > 0.9), gen_name
+
+
+def generator_illicit_reactive_power_m005(values):
+    """Generators with reactive power out of their authorized value, with a range 5% larger on both sides."""
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
+    return (q_normalized < -0.05) | (q_normalized > 1.05), gen_name
+
+
+def generator_illicit_reactive_power_m01(values):
+    """Generators with reactive power out of their authorized value, with a range 10% larger on both sides."""
+    q_normalized, gen_name = generator_normalized_reactive_power(values)
+    return (q_normalized < -0.1) | (q_normalized > 1.1), gen_name
 
 
 def snapshots_illicit_reactive_power(values):
@@ -289,9 +373,21 @@ def snapshots_illicit_reactive_power_01(values):
     return illicit_reactive_power.any(), "0"
 
 
+def snapshots_illicit_reactive_power_m005(values):
+    """Snapshots with at least one illicit reactive power, with a range 5% smaller on both sides."""
+    illicit_reactive_power, _ = generator_illicit_reactive_power_m005(values)
+    return illicit_reactive_power.any(), "0"
+
+
+def snapshots_illicit_reactive_power_m01(values):
+    """Snapshots with at least one illicit reactive power, with a range 10% smaller on both sides."""
+    illicit_reactive_power, _ = generator_illicit_reactive_power_m01(values)
+    return illicit_reactive_power.any(), "0"
+
+
 def snapshots_illicit_values(values):
     """Snapshot with at least one illicit value."""
-    v, _ = snapshots_illicit_current(values)
+    v, _ = snapshots_illicit_voltage(values)
     i, _ = snapshots_illicit_current(values)
     q, _ = snapshots_illicit_reactive_power(values)
     return v | i | q, '0'
@@ -299,7 +395,7 @@ def snapshots_illicit_values(values):
 
 def snapshots_illicit_values_005(values):
     """Snapshot with at least one illicit value, with a range 5% smaller on both sides."""
-    v, _ = snapshots_illicit_current_005(values)
+    v, _ = snapshots_illicit_voltage_005(values)
     i, _ = snapshots_illicit_current_005(values)
     q, _ = snapshots_illicit_reactive_power_005(values)
     return v | i | q, '0'
@@ -307,9 +403,25 @@ def snapshots_illicit_values_005(values):
 
 def snapshots_illicit_values_01(values):
     """Snapshot with at least one illicit value, with a range 1O% smaller on both sides."""
-    v, _ = snapshots_illicit_current_01(values)
+    v, _ = snapshots_illicit_voltage_01(values)
     i, _ = snapshots_illicit_current_01(values)
     q, _ = snapshots_illicit_reactive_power_01(values)
+    return v | i | q, '0'
+
+
+def snapshots_illicit_values_m005(values):
+    """Snapshot with at least one illicit value, with a range 5% smaller on both sides."""
+    v, _ = snapshots_illicit_voltage_m005(values)
+    i, _ = snapshots_illicit_current_m005(values)
+    q, _ = snapshots_illicit_reactive_power_m005(values)
+    return v | i | q, '0'
+
+
+def snapshots_illicit_values_m01(values):
+    """Snapshot with at least one illicit value, with a range 1O% smaller on both sides."""
+    v, _ = snapshots_illicit_voltage_m01(values)
+    i, _ = snapshots_illicit_current_m01(values)
+    q, _ = snapshots_illicit_reactive_power_m01(values)
     return v | i | q, '0'
 
 

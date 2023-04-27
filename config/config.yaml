@@ -1,0 +1,31 @@
+metrics_processor_name: "PandaPowerMetricsProcessor"
+
+dataset_versions:
+
+  - name: "Dataset 1"
+    path: "example_data/dataset_1"
+    color: "tab:blue"
+
+  - name: "Dataset 2"
+    path: "example_data/dataset_2"
+    color: "tab:orange"
+
+  - name: "Dataset 3"
+    path: "example_data/dataset_3"
+    color: "tab:green"
+
+modes:
+  focus_modes:
+    all: True
+    object: False
+    snapshot: False
+  display_modes:
+    plot: True
+    table: True
+  statistics_modes:
+    summary: True
+    correlation: True
+
+figure_settings:
+  night_mode: True
+  figsize: [12, 6]

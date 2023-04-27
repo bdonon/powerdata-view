@@ -1,0 +1,1832 @@
+{
+  "_module": "pandapower.auxiliary",
+  "_class": "pandapowerNet",
+  "_object": {
+    "bus": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"vn_kv\",\"type\",\"zone\",\"in_service\",\"min_vm_pu\",\"max_vm_pu\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],\"data\":[[\"1011\",130.0,\"b\",\"north\",true,0.9,1.1],[\"1012\",130.0,\"b\",\"north\",true,0.9,1.1],[\"1013\",130.0,\"b\",\"north\",true,0.9,1.1],[\"1022\",130.0,\"b\",\"north\",true,0.9,1.1],[\"1041\",130.0,\"b\",\"central\",true,0.9,1.1],[\"1042\",130.0,\"b\",\"central\",true,0.9,1.1],[\"1043\",130.0,\"b\",\"central\",true,0.9,1.1],[\"1044\",130.0,\"b\",\"central\",true,0.9,1.1],[\"1045\",130.0,\"b\",\"central\",true,0.9,1.1],[\"2031\",220.0,\"b\",\"north\",true,0.9,1.1],[\"2032\",220.0,\"b\",\"north\",true,0.9,1.1],[\"4071\",400.0,\"b\",\"equiv\",true,0.9,1.1],[\"4072\",400.0,\"b\",\"equiv\",true,0.9,1.1],[\"4041\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4042\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4043\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4046\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4047\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4051\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4061\",400.0,\"b\",\"south\",true,0.9,1.1],[\"4062\",400.0,\"b\",\"south\",true,0.9,1.1],[\"4063\",400.0,\"b\",\"south\",true,0.9,1.1],[\"4012\",400.0,\"b\",\"north\",true,0.9,1.1],[\"1014\",130.0,\"b\",\"north\",true,0.9,1.1],[\"1021\",130.0,\"b\",\"north\",true,0.9,1.1],[\"4011\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4021\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4022\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4032\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4023\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4031\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4033\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4034\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4035\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4036\",400.0,\"b\",\"north\",true,0.9,1.1],[\"4044\",400.0,\"b\",\"central\",true,0.9,1.1],[\"4045\",400.0,\"b\",\"central\",true,0.9,1.1],[\"g1\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g2\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g3\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g4\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g5\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g6\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g7\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g8\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g9\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g10\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g11\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g12\",15.0,\"b\",\"north\",true,0.9,1.1],[\"g13\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g14\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g15b\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g15\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g16\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g16b\",15.0,\"b\",\"central\",true,0.9,1.1],[\"g17\",15.0,\"b\",\"south\",true,0.9,1.1],[\"g18b\",15.0,\"b\",\"south\",true,0.9,1.1],[\"g18\",15.0,\"b\",\"south\",true,0.9,1.1],[\"g19\",15.0,\"b\",\"equiv\",true,0.9,1.1],[\"g20\",15.0,\"b\",\"equiv\",true,0.9,1.1]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "vn_kv": "float64",
+        "type": "object",
+        "zone": "object",
+        "in_service": "bool",
+        "min_vm_pu": "float64",
+        "max_vm_pu": "float64"
+      }
+    },
+    "load": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_mw\",\"q_mvar\",\"const_z_percent\",\"const_i_percent\",\"sn_mva\",\"scaling\",\"in_service\",\"type\",\"controllable\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],\"data\":[[\"l1011\",0,271.326966215411176,197.836298104069243,0.0,0.0,null,1.0,true,null,false],[\"l1012\",1,147.353639757541316,65.299279541284918,0.0,0.0,null,1.0,true,null,false],[\"l1013\",2,473.398529609428181,125.078970225721264,0.0,0.0,null,1.0,true,null,false],[\"l1022\",3,74.19406471495877,-42.605458439453024,0.0,0.0,null,1.0,true,null,false],[\"l1041\",4,244.145924621365793,-139.984436440035239,0.0,0.0,null,1.0,true,null,false],[\"l1042\",5,134.850066625024681,47.476841834834026,0.0,0.0,null,1.0,true,null,false],[\"l1043\",6,188.268061992417216,96.365522029974713,0.0,0.0,null,1.0,true,null,false],[\"l1044\",7,298.327611939761994,190.524077609980168,0.0,0.0,null,1.0,true,null,false],[\"l1045\",8,167.601101280971193,88.126987421166874,0.0,0.0,null,1.0,true,null,false],[\"l2031\",9,41.043836329834079,-20.719856525702031,0.0,0.0,null,1.0,true,null,false],[\"l2032\",10,192.479984828669586,143.730650963035742,0.0,0.0,null,1.0,true,null,false],[\"l4071\",11,49.205144937708582,19.90813405671484,0.0,0.0,null,1.0,true,null,false],[\"l4072\",12,113.575352994628758,40.995684337003951,0.0,0.0,null,1.0,true,null,false],[\"l4041\",13,5.114048548277811,1.097404452490965,0.0,0.0,null,1.0,true,null,false],[\"l4042\",14,2.439195803600228,1.008497459984934,0.0,0.0,null,1.0,true,null,false],[\"l4043\",15,80.737115541588281,27.1004648898829,0.0,0.0,null,1.0,true,null,false],[\"l4046\",16,449.134528188734123,115.067664610934884,0.0,0.0,null,1.0,true,null,false],[\"l4047\",17,58.903259143440003,11.135822057081739,0.0,0.0,null,1.0,true,null,false],[\"l4051\",18,437.141515982568364,242.831248449689241,0.0,0.0,null,1.0,true,null,false],[\"l4061\",19,30.197796298538904,21.74359858428793,0.0,0.0,null,1.0,true,null,false],[\"l4062\",20,360.882173653494647,242.259733954331125,0.0,0.0,null,1.0,true,null,false],[\"l4063\",21,302.663228707119174,202.009883384927349,0.0,0.0,null,1.0,true,null,false]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "const_z_percent": "float64",
+        "const_i_percent": "float64",
+        "sn_mva": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "type": "object",
+        "controllable": "object"
+      }
+    },
+    "sgen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_mw\",\"q_mvar\",\"sn_mva\",\"scaling\",\"in_service\",\"type\",\"current_source\",\"controllable\",\"generator_type\",\"min_p_mw\",\"max_p_mw\",\"min_q_mvar\",\"max_q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "int64",
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "sn_mva": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "type": "object",
+        "current_source": "bool",
+        "controllable": "object",
+        "generator_type": "object",
+        "min_p_mw": "float64",
+        "max_p_mw": "float64",
+        "min_q_mvar": "float64",
+        "max_q_mvar": "float64"
+      }
+    },
+    "motor": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"pn_mech_mw\",\"loading_percent\",\"cos_phi\",\"cos_phi_n\",\"efficiency_percent\",\"efficiency_n_percent\",\"lrc_pu\",\"vn_kv\",\"scaling\",\"in_service\",\"rx\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "int64",
+        "pn_mech_mw": "float64",
+        "loading_percent": "float64",
+        "cos_phi": "float64",
+        "cos_phi_n": "float64",
+        "efficiency_percent": "float64",
+        "efficiency_n_percent": "float64",
+        "lrc_pu": "float64",
+        "vn_kv": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "rx": "float64"
+      }
+    },
+    "asymmetric_load": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\",\"sn_mva\",\"scaling\",\"in_service\",\"type\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64",
+        "sn_mva": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "type": "object"
+      }
+    },
+    "asymmetric_sgen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\",\"sn_mva\",\"scaling\",\"in_service\",\"type\",\"current_source\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "int64",
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64",
+        "sn_mva": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "type": "object",
+        "current_source": "bool"
+      }
+    },
+    "storage": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_mw\",\"q_mvar\",\"sn_mva\",\"soc_percent\",\"min_e_mwh\",\"max_e_mwh\",\"scaling\",\"in_service\",\"type\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "int64",
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "sn_mva": "float64",
+        "soc_percent": "float64",
+        "min_e_mwh": "float64",
+        "max_e_mwh": "float64",
+        "scaling": "float64",
+        "in_service": "bool",
+        "type": "object"
+      }
+    },
+    "gen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"p_mw\",\"vm_pu\",\"sn_mva\",\"min_q_mvar\",\"max_q_mvar\",\"scaling\",\"slack\",\"in_service\",\"slack_weight\",\"type\",\"min_p_mw\",\"max_p_mw\",\"controllable\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],\"data\":[[\"g1\",37,679.999999759153866,1.0,100.0,-720.0,720.0,1.0,false,true,0.0,null,10.0,720.0,true],[\"g2\",38,0.0,0.0,100.0,-540.0,540.0,1.0,false,false,0.0,null,10.0,540.0,true],[\"g3\",39,0.0,0.0,100.0,-630.0,630.0,1.0,false,false,0.0,null,10.0,630.0,true],[\"g4\",40,0.0,0.0,100.0,-540.0,540.0,1.0,false,false,0.0,null,10.0,540.0,true],[\"g5\",41,0.0,0.0,100.0,-225.0,325.0,1.0,false,false,0.0,null,10.0,475.0,true],[\"g6\",42,0.0,0.0,100.0,-360.0,560.0,1.0,false,false,0.0,null,10.0,560.0,true],[\"g7\",43,379.999999701436423,1.0,100.0,-280.0,360.0,1.0,false,true,0.0,null,10.0,380.0,true],[\"g8\",44,621.329583950201027,1.0,100.0,-765.0,965.0,1.0,false,true,0.0,null,10.0,965.0,true],[\"g9\",45,849.999999632243202,1.0,100.0,-900.0,900.0,1.0,false,true,0.0,null,10.0,900.0,true],[\"g10\",46,0.0,0.0,100.0,-720.0,720.0,1.0,false,false,0.0,null,10.0,720.0,true],[\"g11\",47,0.0,0.0,100.0,-370.0,570.0,1.0,false,false,0.0,null,10.0,570.0,true],[\"g12\",48,0.0,0.0,100.0,-415.0,515.0,1.0,false,false,0.0,null,10.0,575.0,true],[\"g13\",49,-0.000000003455638,1.0,100.0,-570.0,570.0,1.0,false,true,0.0,null,0.0,0.0,true],[\"g14\",50,0.0,0.0,100.0,-630.0,630.0,1.0,false,false,0.0,null,10.0,630.0,true],[\"g15\",52,0.0,0.0,100.0,-540.0,580.0,1.0,false,false,0.0,null,10.0,540.0,true],[\"g16\",53,0.0,0.0,100.0,-630.0,630.0,1.0,false,false,0.0,null,10.0,630.0,true],[\"g16b\",54,144.113228479613412,1.0,100.0,-630.0,630.0,1.0,false,true,0.0,null,10.0,630.0,true],[\"g17\",55,509.999999719716584,1.0,100.0,-540.0,540.0,1.0,false,true,0.0,null,10.0,540.0,true],[\"g18b\",56,509.99999963360176,1.0,100.0,-540.0,540.0,1.0,false,true,0.0,null,10.0,540.0,true],[\"g18\",57,0.0,0.0,100.0,-540.0,540.0,1.0,false,false,0.0,null,10.0,540.0,true],[\"g19\",58,0.0,0.0,100.0,-450.0,520.0,1.0,false,false,0.0,null,10.0,560.0,true],[\"g20\",59,0.0,0.0,100.0,-2050.0,4000.0,1.0,false,false,0.0,null,10.0,4500.0,true]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "p_mw": "float64",
+        "vm_pu": "float64",
+        "sn_mva": "float64",
+        "min_q_mvar": "float64",
+        "max_q_mvar": "float64",
+        "scaling": "float64",
+        "slack": "bool",
+        "in_service": "bool",
+        "slack_weight": "float64",
+        "type": "object",
+        "min_p_mw": "float64",
+        "max_p_mw": "float64",
+        "controllable": "object"
+      }
+    },
+    "switch": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"bus\",\"element\",\"et\",\"type\",\"closed\",\"name\",\"z_ohm\",\"in_ka\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "bus": "int64",
+        "element": "int64",
+        "et": "object",
+        "type": "object",
+        "closed": "bool",
+        "name": "object",
+        "z_ohm": "float64",
+        "in_ka": "float64"
+      }
+    },
+    "shunt": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"bus\",\"name\",\"q_mvar\",\"p_mw\",\"vn_kv\",\"step\",\"max_step\",\"in_service\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11],\"data\":[[0,\"s1011\",100.0,0.0,130.0,4,4,true],[3,\"s1022\",-100.0,0.0,130.0,0,2,true],[4,\"s1041\",-100.0,0.0,130.0,0,2,true],[6,\"s1043\",-100.0,0.0,130.0,0,1,true],[7,\"s1044\",-100.0,0.0,130.0,0,2,true],[8,\"s1045\",-100.0,0.0,130.0,0,2,true],[11,\"s4071\",100.0,0.0,400.0,4,4,true],[13,\"s4041\",-100.0,0.0,400.0,0,2,true],[15,\"s4043\",-100.0,0.0,400.0,0,2,true],[16,\"s4046\",-100.0,0.0,400.0,0,1,true],[18,\"s4051\",-100.0,0.0,400.0,0,1,true],[22,\"s4012\",100.0,0.0,400.0,1,1,true]]}",
+      "orient": "split",
+      "dtype": {
+        "bus": "uint32",
+        "name": "object",
+        "q_mvar": "float64",
+        "p_mw": "float64",
+        "vn_kv": "float64",
+        "step": "uint32",
+        "max_step": "uint32",
+        "in_service": "bool"
+      }
+    },
+    "ext_grid": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"vm_pu\",\"va_degree\",\"slack_weight\",\"in_service\",\"min_p_mw\",\"max_p_mw\",\"min_q_mvar\",\"max_q_mvar\"],\"index\":[0],\"data\":[[\"g15b\",51,1.0,0.0,1.0,true,0.0,2800.0,-540.0,1840.0]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "vm_pu": "float64",
+        "va_degree": "float64",
+        "slack_weight": "float64",
+        "in_service": "bool",
+        "min_p_mw": "float64",
+        "max_p_mw": "float64",
+        "min_q_mvar": "float64",
+        "max_q_mvar": "float64"
+      }
+    },
+    "line": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"std_type\",\"from_bus\",\"to_bus\",\"length_km\",\"r_ohm_per_km\",\"x_ohm_per_km\",\"c_nf_per_km\",\"g_us_per_km\",\"max_i_ka\",\"df\",\"parallel\",\"type\",\"in_service\",\"max_loading_percent\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],\"data\":[[\"1011_1013\",null,0,2,1.0,1.69,11.830000000000002,259.997021827280889,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1011_1013\",null,0,2,1.0,1.69,11.830000000000002,259.997021827280889,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1012_1014\",null,1,23,1.0,2.370056,15.209999999999999,340.007696176910542,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1012_1014\",null,1,23,1.0,2.370056,15.209999999999999,340.007696176910542,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1013_1014\",null,2,23,1.0,1.179958,8.450000000000001,190.006516675862741,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1013_1014\",null,2,23,1.0,1.179958,8.450000000000001,190.006516675862741,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1021_1022\",null,24,3,1.0,5.069999999999999,33.800000000000004,570.00071512308034,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1021_1022\",null,24,3,1.0,5.069999999999999,33.800000000000004,570.00071512308034,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1041_1043\",null,4,6,1.0,1.69,10.139999999999999,229.993018946169712,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1041_1043\",null,4,6,1.0,1.69,10.139999999999999,229.993018946169712,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1041_1045\",null,4,8,1.0,2.52993,20.279999999999998,470.006207090551015,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1041_1045\",null,4,8,1.0,2.52993,20.279999999999998,470.006207090551015,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1042_1044\",null,5,7,1.0,6.419972,47.320000000000007,1130.000095952457059,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1042_1044\",null,5,7,1.0,6.419972,47.320000000000007,1130.000095952457059,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1042_1045\",null,5,8,1.0,8.450000000000001,50.699999999999996,1130.000095952457059,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1043_1044\",null,6,7,1.0,1.69,13.52,300.002359002095716,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"1043_1044\",null,6,7,1.0,1.69,13.52,300.002359002095716,0.0,0.777202285447573,1.0,1,\"ol\",true,100.0],[\"2031_2032\",null,9,10,1.0,5.809936,43.559999999999995,99.997971475713584,0.0,0.656079851351848,1.0,1,\"ol\",true,100.0],[\"2031_2032\",null,9,10,1.0,5.809936,43.559999999999995,99.997971475713584,0.0,0.656079851351848,1.0,1,\"ol\",true,100.0],[\"4011_4012\",null,25,22,1.0,1.6,12.800000000000001,400.000139599283216,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4011_4021\",null,25,26,1.0,9.6,96.0,3579.967627931856896,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4011_4022\",null,25,27,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4011_4071\",null,25,11,1.0,8.0,72.0,2789.986152400925221,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4012_4022\",null,22,27,1.0,6.4,56.000000000000007,2090.022712682769452,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4012_4071\",null,22,11,1.0,8.0,80.0,2980.017154452647901,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4021_4032\",null,26,28,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4021_4023\",null,26,29,1.0,16.0,160.0,5970.029239331467579,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4023_4042\",null,29,14,1.0,0.0,-64.0,0.0,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4022_4031\",null,27,30,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4022_4031\",null,27,30,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4031_4032\",null,30,28,1.0,1.6,16.0,600.002198835713557,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4031_4033\",null,30,31,1.0,9.6,128.0,4770.000968418576122,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4033_4041\",null,31,13,1.0,0.0,-64.0,0.0,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4031_4034\",null,30,32,1.0,9.6,128.0,4770.000968418576122,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4034_4041\",null,32,13,1.0,0.0,-64.0,0.0,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4032_4035\",null,28,33,1.0,16.0,106.670400000000015,3980.019492887644901,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4035_4042\",null,33,14,1.0,0.0,-42.670400000000001,0.0,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4032_4036\",null,28,34,1.0,9.6,128.0,4770.000968418576122,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4036_4044\",null,34,35,1.0,0.0,-48.0,0.0,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4041_4044\",null,13,35,1.0,4.8,48.0,1789.983813965928448,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4041_4061\",null,13,19,1.0,9.6,72.0,2590.023881900267952,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4042_4043\",null,14,15,1.0,3.2,24.0,990.007408008825678,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4042_4044\",null,14,35,1.0,3.2,32.0,1190.033340486719908,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4043_4044\",null,15,35,1.0,1.6,16.0,600.002198835713557,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4043_4046\",null,15,16,1.0,1.6,16.0,600.002198835713557,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4043_4047\",null,15,17,1.0,3.2,32.0,1190.033340486719908,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4044_4045\",null,35,36,1.0,3.2,32.0,1190.033340486719908,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4044_4045\",null,35,36,1.0,3.2,32.0,1190.033340486719908,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4045_4051\",null,36,18,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4045_4051\",null,36,18,1.0,6.4,64.0,2389.997949422373949,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4045_4062\",null,36,20,1.0,17.599999999999998,128.0,4770.000968418576122,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4046_4047\",null,16,17,1.0,1.6,24.0,990.007408008825678,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4061_4062\",null,19,20,1.0,3.2,32.0,1190.033340486719908,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4062_4063\",null,20,21,1.0,4.8,48.0,1789.983813965928448,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4062_4063\",null,20,21,1.0,4.8,48.0,1789.983813965928448,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4071_4072\",null,11,12,1.0,4.8,48.0,5970.029239331467579,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0],[\"4071_4072\",null,11,12,1.0,4.8,48.0,5970.029239331467579,0.0,1.010362971081845,1.0,1,\"ol\",true,100.0]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "std_type": "object",
+        "from_bus": "uint32",
+        "to_bus": "uint32",
+        "length_km": "float64",
+        "r_ohm_per_km": "float64",
+        "x_ohm_per_km": "float64",
+        "c_nf_per_km": "float64",
+        "g_us_per_km": "float64",
+        "max_i_ka": "float64",
+        "df": "float64",
+        "parallel": "uint32",
+        "type": "object",
+        "in_service": "bool",
+        "max_loading_percent": "float64"
+      }
+    },
+    "trafo": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"std_type\",\"hv_bus\",\"lv_bus\",\"sn_mva\",\"vn_hv_kv\",\"vn_lv_kv\",\"vk_percent\",\"vkr_percent\",\"pfe_kw\",\"i0_percent\",\"shift_degree\",\"tap_side\",\"tap_neutral\",\"tap_min\",\"tap_max\",\"tap_step_percent\",\"tap_step_degree\",\"tap_pos\",\"tap_phase_shifter\",\"parallel\",\"df\",\"in_service\",\"max_loading_percent\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],\"data\":[[\"1012_g1\",null,1,37,800.0,130.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1013_g2\",null,2,38,600.0,130.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1014_g3\",null,23,39,700.0,130.0,15.0,15.000299999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1021_g4\",null,24,40,600.0,130.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1022_g5\",null,3,41,1250.0,130.0,15.0,75.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1042_g6\",null,5,42,600.0,130.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"1043_g7\",null,6,43,1200.0,130.0,15.0,90.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"2032_g8\",null,10,44,1000.0,220.0,15.0,14.999950000000002,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4011_g9\",null,25,45,1000.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4012_g10\",null,22,46,800.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4021_g11\",null,26,47,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4031_g12\",null,30,48,1350.0,400.0,15.0,57.856949999999998,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4041_g13\",null,13,49,575.0,400.0,15.0,9.9999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4042_g14\",null,14,50,700.0,400.0,15.0,15.000299999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4047_g15b\",null,17,51,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4047_g15\",null,17,52,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4051_g16\",null,18,53,700.0,400.0,15.0,15.000299999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4051_g16b\",null,18,54,700.0,400.0,15.0,15.000299999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4062_g17\",null,20,55,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4063_g18b\",null,21,56,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4063_g18\",null,21,57,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4071_g19\",null,11,58,600.0,400.0,15.0,15.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4072_g20\",null,12,59,4500.0,400.0,15.0,14.9985,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4011_1011\",null,25,0,1250.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,10.714000000000002,null,-1,false,1,1.0,true,100.0],[\"4012_1012\",null,22,1,1250.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,10.714000000000002,null,-1,false,1,1.0,true,100.0],[\"4022_1022\",null,27,3,833.299999999999954,400.0,130.0,9.999599999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,6.542000000000003,null,-1,false,1,1.0,true,100.0],[\"4031_2031\",null,30,9,833.299999999999954,400.0,220.0,9.999599999999999,0.0,0.0,0.0,0.0,\"hv\",0,null,null,4.762,null,-1,false,1,1.0,true,100.0],[\"4044_1044\",null,35,7,1000.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4044_1044\",null,35,7,1000.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4045_1045\",null,36,8,1000.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0],[\"4045_1045\",null,36,8,1000.0,400.0,130.0,10.0,0.0,0.0,0.0,0.0,\"hv\",0,null,null,0.0,null,0,false,1,1.0,true,100.0]]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "std_type": "object",
+        "hv_bus": "uint32",
+        "lv_bus": "uint32",
+        "sn_mva": "float64",
+        "vn_hv_kv": "float64",
+        "vn_lv_kv": "float64",
+        "vk_percent": "float64",
+        "vkr_percent": "float64",
+        "pfe_kw": "float64",
+        "i0_percent": "float64",
+        "shift_degree": "float64",
+        "tap_side": "object",
+        "tap_neutral": "int32",
+        "tap_min": "float64",
+        "tap_max": "float64",
+        "tap_step_percent": "float64",
+        "tap_step_degree": "float64",
+        "tap_pos": "int32",
+        "tap_phase_shifter": "bool",
+        "parallel": "uint32",
+        "df": "float64",
+        "in_service": "bool",
+        "max_loading_percent": "float64"
+      }
+    },
+    "trafo3w": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"std_type\",\"hv_bus\",\"mv_bus\",\"lv_bus\",\"sn_hv_mva\",\"sn_mv_mva\",\"sn_lv_mva\",\"vn_hv_kv\",\"vn_mv_kv\",\"vn_lv_kv\",\"vk_hv_percent\",\"vk_mv_percent\",\"vk_lv_percent\",\"vkr_hv_percent\",\"vkr_mv_percent\",\"vkr_lv_percent\",\"pfe_kw\",\"i0_percent\",\"shift_mv_degree\",\"shift_lv_degree\",\"tap_side\",\"tap_neutral\",\"tap_min\",\"tap_max\",\"tap_step_percent\",\"tap_step_degree\",\"tap_pos\",\"tap_at_star_point\",\"in_service\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "std_type": "object",
+        "hv_bus": "uint32",
+        "mv_bus": "uint32",
+        "lv_bus": "uint32",
+        "sn_hv_mva": "float64",
+        "sn_mv_mva": "float64",
+        "sn_lv_mva": "float64",
+        "vn_hv_kv": "float64",
+        "vn_mv_kv": "float64",
+        "vn_lv_kv": "float64",
+        "vk_hv_percent": "float64",
+        "vk_mv_percent": "float64",
+        "vk_lv_percent": "float64",
+        "vkr_hv_percent": "float64",
+        "vkr_mv_percent": "float64",
+        "vkr_lv_percent": "float64",
+        "pfe_kw": "float64",
+        "i0_percent": "float64",
+        "shift_mv_degree": "float64",
+        "shift_lv_degree": "float64",
+        "tap_side": "object",
+        "tap_neutral": "int32",
+        "tap_min": "int32",
+        "tap_max": "int32",
+        "tap_step_percent": "float64",
+        "tap_step_degree": "float64",
+        "tap_pos": "int32",
+        "tap_at_star_point": "bool",
+        "in_service": "bool"
+      }
+    },
+    "impedance": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"from_bus\",\"to_bus\",\"rft_pu\",\"xft_pu\",\"rtf_pu\",\"xtf_pu\",\"sn_mva\",\"in_service\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "from_bus": "uint32",
+        "to_bus": "uint32",
+        "rft_pu": "float64",
+        "xft_pu": "float64",
+        "rtf_pu": "float64",
+        "xtf_pu": "float64",
+        "sn_mva": "float64",
+        "in_service": "bool"
+      }
+    },
+    "dcline": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"from_bus\",\"to_bus\",\"p_mw\",\"loss_percent\",\"loss_mw\",\"vm_from_pu\",\"vm_to_pu\",\"max_p_mw\",\"min_q_from_mvar\",\"min_q_to_mvar\",\"max_q_from_mvar\",\"max_q_to_mvar\",\"in_service\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "from_bus": "uint32",
+        "to_bus": "uint32",
+        "p_mw": "float64",
+        "loss_percent": "float64",
+        "loss_mw": "float64",
+        "vm_from_pu": "float64",
+        "vm_to_pu": "float64",
+        "max_p_mw": "float64",
+        "min_q_from_mvar": "float64",
+        "min_q_to_mvar": "float64",
+        "max_q_from_mvar": "float64",
+        "max_q_to_mvar": "float64",
+        "in_service": "bool"
+      }
+    },
+    "ward": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"ps_mw\",\"qs_mvar\",\"qz_mvar\",\"pz_mw\",\"in_service\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "ps_mw": "float64",
+        "qs_mvar": "float64",
+        "qz_mvar": "float64",
+        "pz_mw": "float64",
+        "in_service": "bool"
+      }
+    },
+    "xward": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"bus\",\"ps_mw\",\"qs_mvar\",\"qz_mvar\",\"pz_mw\",\"r_ohm\",\"x_ohm\",\"vm_pu\",\"slack_weight\",\"in_service\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "bus": "uint32",
+        "ps_mw": "float64",
+        "qs_mvar": "float64",
+        "qz_mvar": "float64",
+        "pz_mw": "float64",
+        "r_ohm": "float64",
+        "x_ohm": "float64",
+        "vm_pu": "float64",
+        "slack_weight": "float64",
+        "in_service": "bool"
+      }
+    },
+    "measurement": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"measurement_type\",\"element_type\",\"element\",\"value\",\"std_dev\",\"side\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "measurement_type": "object",
+        "element_type": "object",
+        "element": "uint32",
+        "value": "float64",
+        "std_dev": "float64",
+        "side": "object"
+      }
+    },
+    "pwl_cost": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"power_type\",\"element\",\"et\",\"points\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "power_type": "object",
+        "element": "uint32",
+        "et": "object",
+        "points": "object"
+      }
+    },
+    "poly_cost": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"element\",\"et\",\"cp0_eur\",\"cp1_eur_per_mw\",\"cp2_eur_per_mw2\",\"cq0_eur\",\"cq1_eur_per_mvar\",\"cq2_eur_per_mvar2\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],\"data\":[[0,\"ext_grid\",0.0,1.032562387105849,0.0,0.0,0.0,0.0],[0,\"gen\",0.0,1.019657152227935,0.0,0.0,0.0,0.0],[1,\"gen\",0.0,1.611878179876871,0.0,0.0,0.0,0.0],[2,\"gen\",0.0,1.805861629787962,0.0,0.0,0.0,0.0],[3,\"gen\",0.0,1.430070205312137,0.0,0.0,0.0,0.0],[4,\"gen\",0.0,1.710020215510797,0.0,0.0,0.0,0.0],[5,\"gen\",0.0,1.421737050196732,0.0,0.0,0.0,0.0],[6,\"gen\",0.0,1.067304023198199,0.0,0.0,0.0,0.0],[7,\"gen\",0.0,1.062246203107388,0.0,0.0,0.0,0.0],[8,\"gen\",0.0,1.128229072325047,0.0,0.0,0.0,0.0],[9,\"gen\",0.0,1.628823231468511,0.0,0.0,0.0,0.0],[10,\"gen\",0.0,1.705088280846136,0.0,0.0,0.0,0.0],[11,\"gen\",0.0,1.839949242907622,0.0,0.0,0.0,0.0],[12,\"gen\",0.0,1.103982858187367,0.0,0.0,0.0,0.0],[13,\"gen\",0.0,1.902336569880175,0.0,0.0,0.0,0.0],[14,\"gen\",0.0,1.99249926544972,0.0,0.0,0.0,0.0],[15,\"gen\",0.0,1.918721086074301,0.0,0.0,0.0,0.0],[16,\"gen\",0.0,1.339134577767523,0.0,0.0,0.0,0.0],[17,\"gen\",0.0,1.059831955302553,0.0,0.0,0.0,0.0],[18,\"gen\",0.0,1.123966611386767,0.0,0.0,0.0,0.0],[19,\"gen\",0.0,1.995030736702892,0.0,0.0,0.0,0.0],[20,\"gen\",0.0,1.41142172020104,0.0,0.0,0.0,0.0],[21,\"gen\",0.0,1.397963866076211,0.0,0.0,0.0,0.0]]}",
+      "orient": "split",
+      "dtype": {
+        "element": "uint32",
+        "et": "object",
+        "cp0_eur": "float64",
+        "cp1_eur_per_mw": "float64",
+        "cp2_eur_per_mw2": "float64",
+        "cq0_eur": "float64",
+        "cq1_eur_per_mvar": "float64",
+        "cq2_eur_per_mvar2": "float64"
+      }
+    },
+    "characteristic": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"object\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "object": "object"
+      }
+    },
+    "controller": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"object\",\"in_service\",\"order\",\"level\",\"initial_run\",\"recycle\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "object": "object",
+        "in_service": "bool",
+        "order": "float64",
+        "level": "object",
+        "initial_run": "bool",
+        "recycle": "object"
+      }
+    },
+    "group": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"name\",\"element_type\",\"element\",\"reference_column\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "name": "object",
+        "element_type": "object",
+        "element": "object",
+        "reference_column": "object"
+      }
+    },
+    "line_geodata": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"coords\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "coords": "object"
+      }
+    },
+    "bus_geodata": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"x\",\"y\",\"coords\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],\"data\":[[8.08,-0.87,null],[8.390000000000001,-1.79,null],[9.81,-0.88,null],[5.73,-3.02,null],[5.34,-7.22,null],[8.220000000000001,-6.81,null],[5.2,-6.2,null],[6.32,-6.2,null],[6.93,-7.22,null],[5.65,-3.73,null],[4.59,-3.73,null],[4.51,-0.88,null],[4.51,-2.2,null],[4.83,-5.08,null],[8.9,-4.88,null],[8.289999999999999,-5.7,null],[9.5,-5.7,null],[9.51,-7.84,null],[8.199999999999999,-8.24,null],[4.32,-6.11,null],[4.32,-7.76,null],[4.33,-8.27,null],[5.93,-1.79,null],[9.81,-1.79,null],[4.61,-3.02,null],[6.34,-0.88,null],[8.380000000000001,-3.02,null],[6.84,-3.02,null],[8.279999999999999,-3.73,null],[8.640000000000001,-3.95,null],[6.84,-3.73,null],[6.03,-4.54,null],[5.634,-4.27,null],[8.59,-4.305,null],[7.57,-4.715,null],[6.86,-5.7,null],[7.45,-7.73,null],[8.300000000000001,-2.09,null],[9.81,-0.57,null],[10.029999999999999,-2.09,null],[4.41,-3.32,null],[5.73,-2.71,null],[8.449999999999999,-6.5,null],[5.4,-5.89,null],[4.51,-4.04,null],[6.3,-0.57,null],[5.85,-2.08,null],[8.48,-2.71,null],[7.26,-3.43,null],[5.1,-5.45,null],[9.220000000000001,-5.19,null],[9.81,-7.53,null],[9.199999999999999,-7.53,null],[8.19,-7.94,null],[8.789999999999999,-7.93,null],[4.57,-7.45,null],[4.14,-8.57,null],[4.76,-8.58,null],[4.71,-0.57,null],[4.51,-2.51,null]]}",
+      "orient": "split",
+      "dtype": {
+        "x": "float64",
+        "y": "float64",
+        "coords": "object"
+      }
+    },
+    "version": "2.11.1",
+    "format_version": "2.10.1.post1",
+    "converged": true,
+    "OPF_converged": false,
+    "name": "",
+    "f_hz": 50,
+    "sn_mva": 100,
+    "std_types": {
+      "line": {
+        "NAYY 4x50 SE": {
+          "c_nf_per_km": 210,
+          "r_ohm_per_km": 0.642,
+          "x_ohm_per_km": 0.083,
+          "max_i_ka": 0.142,
+          "type": "cs",
+          "q_mm2": 50,
+          "alpha": 0.00403
+        },
+        "NAYY 4x120 SE": {
+          "c_nf_per_km": 264,
+          "r_ohm_per_km": 0.225,
+          "x_ohm_per_km": 0.08,
+          "max_i_ka": 0.242,
+          "type": "cs",
+          "q_mm2": 120,
+          "alpha": 0.00403
+        },
+        "NAYY 4x150 SE": {
+          "c_nf_per_km": 261,
+          "r_ohm_per_km": 0.208,
+          "x_ohm_per_km": 0.08,
+          "max_i_ka": 0.27,
+          "type": "cs",
+          "q_mm2": 150,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x95 RM/25 12/20 kV": {
+          "c_nf_per_km": 216,
+          "r_ohm_per_km": 0.313,
+          "x_ohm_per_km": 0.132,
+          "max_i_ka": 0.252,
+          "type": "cs",
+          "q_mm2": 95,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x185 RM/25 12/20 kV": {
+          "c_nf_per_km": 273,
+          "r_ohm_per_km": 0.161,
+          "x_ohm_per_km": 0.117,
+          "max_i_ka": 0.362,
+          "type": "cs",
+          "q_mm2": 185,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x240 RM/25 12/20 kV": {
+          "c_nf_per_km": 304,
+          "r_ohm_per_km": 0.122,
+          "x_ohm_per_km": 0.112,
+          "max_i_ka": 0.421,
+          "type": "cs",
+          "q_mm2": 240,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x95 RM/25 6/10 kV": {
+          "c_nf_per_km": 315,
+          "r_ohm_per_km": 0.313,
+          "x_ohm_per_km": 0.123,
+          "max_i_ka": 0.249,
+          "type": "cs",
+          "q_mm2": 95,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x185 RM/25 6/10 kV": {
+          "c_nf_per_km": 406,
+          "r_ohm_per_km": 0.161,
+          "x_ohm_per_km": 0.11,
+          "max_i_ka": 0.358,
+          "type": "cs",
+          "q_mm2": 185,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x240 RM/25 6/10 kV": {
+          "c_nf_per_km": 456,
+          "r_ohm_per_km": 0.122,
+          "x_ohm_per_km": 0.105,
+          "max_i_ka": 0.416,
+          "type": "cs",
+          "q_mm2": 240,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x150 RM/25 12/20 kV": {
+          "c_nf_per_km": 250,
+          "r_ohm_per_km": 0.206,
+          "x_ohm_per_km": 0.116,
+          "max_i_ka": 0.319,
+          "type": "cs",
+          "q_mm2": 150,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x120 RM/25 12/20 kV": {
+          "c_nf_per_km": 230,
+          "r_ohm_per_km": 0.253,
+          "x_ohm_per_km": 0.119,
+          "max_i_ka": 0.283,
+          "type": "cs",
+          "q_mm2": 120,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x70 RM/25 12/20 kV": {
+          "c_nf_per_km": 190,
+          "r_ohm_per_km": 0.443,
+          "x_ohm_per_km": 0.132,
+          "max_i_ka": 0.22,
+          "type": "cs",
+          "q_mm2": 70,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x150 RM/25 6/10 kV": {
+          "c_nf_per_km": 360,
+          "r_ohm_per_km": 0.206,
+          "x_ohm_per_km": 0.11,
+          "max_i_ka": 0.315,
+          "type": "cs",
+          "q_mm2": 150,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x120 RM/25 6/10 kV": {
+          "c_nf_per_km": 340,
+          "r_ohm_per_km": 0.253,
+          "x_ohm_per_km": 0.113,
+          "max_i_ka": 0.28,
+          "type": "cs",
+          "q_mm2": 120,
+          "alpha": 0.00403
+        },
+        "NA2XS2Y 1x70 RM/25 6/10 kV": {
+          "c_nf_per_km": 280,
+          "r_ohm_per_km": 0.443,
+          "x_ohm_per_km": 0.123,
+          "max_i_ka": 0.217,
+          "type": "cs",
+          "q_mm2": 70,
+          "alpha": 0.00403
+        },
+        "N2XS(FL)2Y 1x120 RM/35 64/110 kV": {
+          "c_nf_per_km": 112,
+          "r_ohm_per_km": 0.153,
+          "x_ohm_per_km": 0.166,
+          "max_i_ka": 0.366,
+          "type": "cs",
+          "q_mm2": 120,
+          "alpha": 0.00393
+        },
+        "N2XS(FL)2Y 1x185 RM/35 64/110 kV": {
+          "c_nf_per_km": 125,
+          "r_ohm_per_km": 0.099,
+          "x_ohm_per_km": 0.156,
+          "max_i_ka": 0.457,
+          "type": "cs",
+          "q_mm2": 185,
+          "alpha": 0.00393
+        },
+        "N2XS(FL)2Y 1x240 RM/35 64/110 kV": {
+          "c_nf_per_km": 135,
+          "r_ohm_per_km": 0.075,
+          "x_ohm_per_km": 0.149,
+          "max_i_ka": 0.526,
+          "type": "cs",
+          "q_mm2": 240,
+          "alpha": 0.00393
+        },
+        "N2XS(FL)2Y 1x300 RM/35 64/110 kV": {
+          "c_nf_per_km": 144,
+          "r_ohm_per_km": 0.06,
+          "x_ohm_per_km": 0.144,
+          "max_i_ka": 0.588,
+          "type": "cs",
+          "q_mm2": 300,
+          "alpha": 0.00393
+        },
+        "15-AL1/3-ST1A 0.4": {
+          "c_nf_per_km": 11,
+          "r_ohm_per_km": 1.8769,
+          "x_ohm_per_km": 0.35,
+          "max_i_ka": 0.105,
+          "type": "ol",
+          "q_mm2": 16,
+          "alpha": 0.00403
+        },
+        "24-AL1/4-ST1A 0.4": {
+          "c_nf_per_km": 11.25,
+          "r_ohm_per_km": 1.2012,
+          "x_ohm_per_km": 0.335,
+          "max_i_ka": 0.14,
+          "type": "ol",
+          "q_mm2": 24,
+          "alpha": 0.00403
+        },
+        "48-AL1/8-ST1A 0.4": {
+          "c_nf_per_km": 12.2,
+          "r_ohm_per_km": 0.5939,
+          "x_ohm_per_km": 0.3,
+          "max_i_ka": 0.21,
+          "type": "ol",
+          "q_mm2": 48,
+          "alpha": 0.00403
+        },
+        "94-AL1/15-ST1A 0.4": {
+          "c_nf_per_km": 13.2,
+          "r_ohm_per_km": 0.306,
+          "x_ohm_per_km": 0.29,
+          "max_i_ka": 0.35,
+          "type": "ol",
+          "q_mm2": 94,
+          "alpha": 0.00403
+        },
+        "34-AL1/6-ST1A 10.0": {
+          "c_nf_per_km": 9.7,
+          "r_ohm_per_km": 0.8342,
+          "x_ohm_per_km": 0.36,
+          "max_i_ka": 0.17,
+          "type": "ol",
+          "q_mm2": 34,
+          "alpha": 0.00403
+        },
+        "48-AL1/8-ST1A 10.0": {
+          "c_nf_per_km": 10.1,
+          "r_ohm_per_km": 0.5939,
+          "x_ohm_per_km": 0.35,
+          "max_i_ka": 0.21,
+          "type": "ol",
+          "q_mm2": 48,
+          "alpha": 0.00403
+        },
+        "70-AL1/11-ST1A 10.0": {
+          "c_nf_per_km": 10.4,
+          "r_ohm_per_km": 0.4132,
+          "x_ohm_per_km": 0.339,
+          "max_i_ka": 0.29,
+          "type": "ol",
+          "q_mm2": 70,
+          "alpha": 0.00403
+        },
+        "94-AL1/15-ST1A 10.0": {
+          "c_nf_per_km": 10.75,
+          "r_ohm_per_km": 0.306,
+          "x_ohm_per_km": 0.33,
+          "max_i_ka": 0.35,
+          "type": "ol",
+          "q_mm2": 94,
+          "alpha": 0.00403
+        },
+        "122-AL1/20-ST1A 10.0": {
+          "c_nf_per_km": 11.1,
+          "r_ohm_per_km": 0.2376,
+          "x_ohm_per_km": 0.323,
+          "max_i_ka": 0.41,
+          "type": "ol",
+          "q_mm2": 122,
+          "alpha": 0.00403
+        },
+        "149-AL1/24-ST1A 10.0": {
+          "c_nf_per_km": 11.25,
+          "r_ohm_per_km": 0.194,
+          "x_ohm_per_km": 0.315,
+          "max_i_ka": 0.47,
+          "type": "ol",
+          "q_mm2": 149,
+          "alpha": 0.00403
+        },
+        "34-AL1/6-ST1A 20.0": {
+          "c_nf_per_km": 9.15,
+          "r_ohm_per_km": 0.8342,
+          "x_ohm_per_km": 0.382,
+          "max_i_ka": 0.17,
+          "type": "ol",
+          "q_mm2": 34,
+          "alpha": 0.00403
+        },
+        "48-AL1/8-ST1A 20.0": {
+          "c_nf_per_km": 9.5,
+          "r_ohm_per_km": 0.5939,
+          "x_ohm_per_km": 0.372,
+          "max_i_ka": 0.21,
+          "type": "ol",
+          "q_mm2": 48,
+          "alpha": 0.00403
+        },
+        "70-AL1/11-ST1A 20.0": {
+          "c_nf_per_km": 9.7,
+          "r_ohm_per_km": 0.4132,
+          "x_ohm_per_km": 0.36,
+          "max_i_ka": 0.29,
+          "type": "ol",
+          "q_mm2": 70,
+          "alpha": 0.00403
+        },
+        "94-AL1/15-ST1A 20.0": {
+          "c_nf_per_km": 10,
+          "r_ohm_per_km": 0.306,
+          "x_ohm_per_km": 0.35,
+          "max_i_ka": 0.35,
+          "type": "ol",
+          "q_mm2": 94,
+          "alpha": 0.00403
+        },
+        "122-AL1/20-ST1A 20.0": {
+          "c_nf_per_km": 10.3,
+          "r_ohm_per_km": 0.2376,
+          "x_ohm_per_km": 0.344,
+          "max_i_ka": 0.41,
+          "type": "ol",
+          "q_mm2": 122,
+          "alpha": 0.00403
+        },
+        "149-AL1/24-ST1A 20.0": {
+          "c_nf_per_km": 10.5,
+          "r_ohm_per_km": 0.194,
+          "x_ohm_per_km": 0.337,
+          "max_i_ka": 0.47,
+          "type": "ol",
+          "q_mm2": 149,
+          "alpha": 0.00403
+        },
+        "184-AL1/30-ST1A 20.0": {
+          "c_nf_per_km": 10.75,
+          "r_ohm_per_km": 0.1571,
+          "x_ohm_per_km": 0.33,
+          "max_i_ka": 0.535,
+          "type": "ol",
+          "q_mm2": 184,
+          "alpha": 0.00403
+        },
+        "243-AL1/39-ST1A 20.0": {
+          "c_nf_per_km": 11,
+          "r_ohm_per_km": 0.1188,
+          "x_ohm_per_km": 0.32,
+          "max_i_ka": 0.645,
+          "type": "ol",
+          "q_mm2": 243,
+          "alpha": 0.00403
+        },
+        "48-AL1/8-ST1A 110.0": {
+          "c_nf_per_km": 8,
+          "r_ohm_per_km": 0.5939,
+          "x_ohm_per_km": 0.46,
+          "max_i_ka": 0.21,
+          "type": "ol",
+          "q_mm2": 48,
+          "alpha": 0.00403
+        },
+        "70-AL1/11-ST1A 110.0": {
+          "c_nf_per_km": 8.4,
+          "r_ohm_per_km": 0.4132,
+          "x_ohm_per_km": 0.45,
+          "max_i_ka": 0.29,
+          "type": "ol",
+          "q_mm2": 70,
+          "alpha": 0.00403
+        },
+        "94-AL1/15-ST1A 110.0": {
+          "c_nf_per_km": 8.65,
+          "r_ohm_per_km": 0.306,
+          "x_ohm_per_km": 0.44,
+          "max_i_ka": 0.35,
+          "type": "ol",
+          "q_mm2": 94,
+          "alpha": 0.00403
+        },
+        "122-AL1/20-ST1A 110.0": {
+          "c_nf_per_km": 8.5,
+          "r_ohm_per_km": 0.2376,
+          "x_ohm_per_km": 0.43,
+          "max_i_ka": 0.41,
+          "type": "ol",
+          "q_mm2": 122,
+          "alpha": 0.00403
+        },
+        "149-AL1/24-ST1A 110.0": {
+          "c_nf_per_km": 8.75,
+          "r_ohm_per_km": 0.194,
+          "x_ohm_per_km": 0.41,
+          "max_i_ka": 0.47,
+          "type": "ol",
+          "q_mm2": 149,
+          "alpha": 0.00403
+        },
+        "184-AL1/30-ST1A 110.0": {
+          "c_nf_per_km": 8.8,
+          "r_ohm_per_km": 0.1571,
+          "x_ohm_per_km": 0.4,
+          "max_i_ka": 0.535,
+          "type": "ol",
+          "q_mm2": 184,
+          "alpha": 0.00403
+        },
+        "243-AL1/39-ST1A 110.0": {
+          "c_nf_per_km": 9,
+          "r_ohm_per_km": 0.1188,
+          "x_ohm_per_km": 0.39,
+          "max_i_ka": 0.645,
+          "type": "ol",
+          "q_mm2": 243,
+          "alpha": 0.00403
+        },
+        "305-AL1/39-ST1A 110.0": {
+          "c_nf_per_km": 9.2,
+          "r_ohm_per_km": 0.0949,
+          "x_ohm_per_km": 0.38,
+          "max_i_ka": 0.74,
+          "type": "ol",
+          "q_mm2": 305,
+          "alpha": 0.00403
+        },
+        "490-AL1/64-ST1A 110.0": {
+          "c_nf_per_km": 9.75,
+          "r_ohm_per_km": 0.059,
+          "x_ohm_per_km": 0.37,
+          "max_i_ka": 0.96,
+          "type": "ol",
+          "q_mm2": 490,
+          "alpha": 0.00403
+        },
+        "679-AL1/86-ST1A 110.0": {
+          "c_nf_per_km": 9.95,
+          "r_ohm_per_km": 0.042,
+          "x_ohm_per_km": 0.36,
+          "max_i_ka": 1.15,
+          "type": "ol",
+          "q_mm2": 679,
+          "alpha": 0.00403
+        },
+        "490-AL1/64-ST1A 220.0": {
+          "c_nf_per_km": 10,
+          "r_ohm_per_km": 0.059,
+          "x_ohm_per_km": 0.285,
+          "max_i_ka": 0.96,
+          "type": "ol",
+          "q_mm2": 490,
+          "alpha": 0.00403
+        },
+        "679-AL1/86-ST1A 220.0": {
+          "c_nf_per_km": 11.7,
+          "r_ohm_per_km": 0.042,
+          "x_ohm_per_km": 0.275,
+          "max_i_ka": 1.15,
+          "type": "ol",
+          "q_mm2": 679,
+          "alpha": 0.00403
+        },
+        "490-AL1/64-ST1A 380.0": {
+          "c_nf_per_km": 11,
+          "r_ohm_per_km": 0.059,
+          "x_ohm_per_km": 0.253,
+          "max_i_ka": 0.96,
+          "type": "ol",
+          "q_mm2": 490,
+          "alpha": 0.00403
+        },
+        "679-AL1/86-ST1A 380.0": {
+          "c_nf_per_km": 14.6,
+          "r_ohm_per_km": 0.042,
+          "x_ohm_per_km": 0.25,
+          "max_i_ka": 1.15,
+          "type": "ol",
+          "q_mm2": 679,
+          "alpha": 0.00403
+        }
+      },
+      "trafo": {
+        "160 MVA 380/110 kV": {
+          "i0_percent": 0.06,
+          "pfe_kw": 60,
+          "vkr_percent": 0.25,
+          "sn_mva": 160,
+          "vn_lv_kv": 110.0,
+          "vn_hv_kv": 380.0,
+          "vk_percent": 12.2,
+          "shift_degree": 0,
+          "vector_group": "Yy0",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "100 MVA 220/110 kV": {
+          "i0_percent": 0.06,
+          "pfe_kw": 55,
+          "vkr_percent": 0.26,
+          "sn_mva": 100,
+          "vn_lv_kv": 110.0,
+          "vn_hv_kv": 220.0,
+          "vk_percent": 12.0,
+          "shift_degree": 0,
+          "vector_group": "Yy0",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "63 MVA 110/20 kV": {
+          "i0_percent": 0.04,
+          "pfe_kw": 22,
+          "vkr_percent": 0.32,
+          "sn_mva": 63,
+          "vn_lv_kv": 20.0,
+          "vn_hv_kv": 110.0,
+          "vk_percent": 18,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "40 MVA 110/20 kV": {
+          "i0_percent": 0.05,
+          "pfe_kw": 18,
+          "vkr_percent": 0.34,
+          "sn_mva": 40,
+          "vn_lv_kv": 20.0,
+          "vn_hv_kv": 110.0,
+          "vk_percent": 16.2,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "25 MVA 110/20 kV": {
+          "i0_percent": 0.07,
+          "pfe_kw": 14,
+          "vkr_percent": 0.41,
+          "sn_mva": 25,
+          "vn_lv_kv": 20.0,
+          "vn_hv_kv": 110.0,
+          "vk_percent": 12,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "63 MVA 110/10 kV": {
+          "sn_mva": 63,
+          "vn_hv_kv": 110,
+          "vn_lv_kv": 10,
+          "vk_percent": 18,
+          "vkr_percent": 0.32,
+          "pfe_kw": 22,
+          "i0_percent": 0.04,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "40 MVA 110/10 kV": {
+          "sn_mva": 40,
+          "vn_hv_kv": 110,
+          "vn_lv_kv": 10,
+          "vk_percent": 16.2,
+          "vkr_percent": 0.34,
+          "pfe_kw": 18,
+          "i0_percent": 0.05,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "25 MVA 110/10 kV": {
+          "sn_mva": 25,
+          "vn_hv_kv": 110,
+          "vn_lv_kv": 10,
+          "vk_percent": 12,
+          "vkr_percent": 0.41,
+          "pfe_kw": 14,
+          "i0_percent": 0.07,
+          "shift_degree": 150,
+          "vector_group": "YNd5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -9,
+          "tap_max": 9,
+          "tap_step_degree": 0,
+          "tap_step_percent": 1.5,
+          "tap_phase_shifter": false
+        },
+        "0.25 MVA 20/0.4 kV": {
+          "sn_mva": 0.25,
+          "vn_hv_kv": 20,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 6,
+          "vkr_percent": 1.44,
+          "pfe_kw": 0.8,
+          "i0_percent": 0.32,
+          "shift_degree": 150,
+          "vector_group": "Yzn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        },
+        "0.4 MVA 20/0.4 kV": {
+          "sn_mva": 0.4,
+          "vn_hv_kv": 20,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 6,
+          "vkr_percent": 1.425,
+          "pfe_kw": 1.35,
+          "i0_percent": 0.3375,
+          "shift_degree": 150,
+          "vector_group": "Dyn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        },
+        "0.63 MVA 20/0.4 kV": {
+          "sn_mva": 0.63,
+          "vn_hv_kv": 20,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 6,
+          "vkr_percent": 1.206,
+          "pfe_kw": 1.65,
+          "i0_percent": 0.2619,
+          "shift_degree": 150,
+          "vector_group": "Dyn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        },
+        "0.25 MVA 10/0.4 kV": {
+          "sn_mva": 0.25,
+          "vn_hv_kv": 10,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 4,
+          "vkr_percent": 1.2,
+          "pfe_kw": 0.6,
+          "i0_percent": 0.24,
+          "shift_degree": 150,
+          "vector_group": "Dyn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        },
+        "0.4 MVA 10/0.4 kV": {
+          "sn_mva": 0.4,
+          "vn_hv_kv": 10,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 4,
+          "vkr_percent": 1.325,
+          "pfe_kw": 0.95,
+          "i0_percent": 0.2375,
+          "shift_degree": 150,
+          "vector_group": "Dyn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        },
+        "0.63 MVA 10/0.4 kV": {
+          "sn_mva": 0.63,
+          "vn_hv_kv": 10,
+          "vn_lv_kv": 0.4,
+          "vk_percent": 4,
+          "vkr_percent": 1.0794,
+          "pfe_kw": 1.18,
+          "i0_percent": 0.1873,
+          "shift_degree": 150,
+          "vector_group": "Dyn5",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -2,
+          "tap_max": 2,
+          "tap_step_degree": 0,
+          "tap_step_percent": 2.5,
+          "tap_phase_shifter": false
+        }
+      },
+      "trafo3w": {
+        "63/25/38 MVA 110/20/10 kV": {
+          "sn_hv_mva": 63,
+          "sn_mv_mva": 25,
+          "sn_lv_mva": 38,
+          "vn_hv_kv": 110,
+          "vn_mv_kv": 20,
+          "vn_lv_kv": 10,
+          "vk_hv_percent": 10.4,
+          "vk_mv_percent": 10.4,
+          "vk_lv_percent": 10.4,
+          "vkr_hv_percent": 0.28,
+          "vkr_mv_percent": 0.32,
+          "vkr_lv_percent": 0.35,
+          "pfe_kw": 35,
+          "i0_percent": 0.89,
+          "shift_mv_degree": 0,
+          "shift_lv_degree": 0,
+          "vector_group": "YN0yn0yn0",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -10,
+          "tap_max": 10,
+          "tap_step_percent": 1.2
+        },
+        "63/25/38 MVA 110/10/10 kV": {
+          "sn_hv_mva": 63,
+          "sn_mv_mva": 25,
+          "sn_lv_mva": 38,
+          "vn_hv_kv": 110,
+          "vn_mv_kv": 10,
+          "vn_lv_kv": 10,
+          "vk_hv_percent": 10.4,
+          "vk_mv_percent": 10.4,
+          "vk_lv_percent": 10.4,
+          "vkr_hv_percent": 0.28,
+          "vkr_mv_percent": 0.32,
+          "vkr_lv_percent": 0.35,
+          "pfe_kw": 35,
+          "i0_percent": 0.89,
+          "shift_mv_degree": 0,
+          "shift_lv_degree": 0,
+          "vector_group": "YN0yn0yn0",
+          "tap_side": "hv",
+          "tap_neutral": 0,
+          "tap_min": -10,
+          "tap_max": 10,
+          "tap_step_percent": 1.2
+        }
+      }
+    },
+    "res_bus": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"vm_pu\",\"va_degree\",\"p_mw\",\"q_mvar\",\"lam_p\",\"lam_q\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],\"data\":[[1.037463397136347,1.014112037547953,271.326966215411176,628.368418263144918,1.339134577491282,0.0],[1.052462222274431,4.717039496330386,147.353639757541316,65.299279541284903,1.33913457745464,0.0],[0.991709492549788,-3.647024821728906,473.398529609428181,125.078970225721264,1.339134578665742,0.0],[1.130676317535887,-0.440929825923652,74.194064714958813,-42.605458439453002,1.339134577483486,0.0],[1.070164087022477,-12.764933528346402,244.14592462136568,-139.984436440035239,1.339134577837059,0.0],[1.011746207839479,-16.700744689699789,134.850066625024738,47.476841834834033,1.339134577730424,0.0],[1.042657401702352,-9.523396195356755,188.268061992417188,96.365522029974699,1.339134577524973,0.0],[1.074898878973317,-9.7722160701028,298.327611939761937,190.524077609980225,1.339134577599399,0.0],[1.069618141661627,-11.037778823226152,167.601101280971306,88.126987421166859,1.339134577652132,0.0],[1.100645244177237,-0.138532234612116,41.043836329833994,-20.719856525702085,1.339134577427352,0.0],[1.007654216125341,10.583213383262281,192.479984828669785,143.730650963035714,1.062246203230085,0.0],[1.044327550400119,0.655887132542392,49.20514493770861,456.15614706660034,1.339134577476439,0.0],[1.085777259494926,-0.44208547076613,113.575352994628702,40.995684337003922,1.339134577484599,0.0],[1.084257230298711,-4.25318555109051,5.114048548277879,1.097404452490991,1.339134577530517,0.0],[1.122162131036088,-7.509787804794544,2.439195803600342,1.008497459984937,1.339134577571712,0.0],[1.087431745506398,-8.431441319081991,80.737115541588082,27.100464889882915,1.339134577588986,0.0],[1.070518604838058,-9.103331690538496,449.134528188734294,115.067664610934912,1.339134577614913,0.0],[1.060724679053376,-6.813147710259739,58.903259143440209,11.135822057081782,1.339134577561962,0.0],[1.022520429923302,-13.205417624304136,437.141515982568308,242.831248449689156,1.339134577655547,0.0],[1.048630713003457,-1.802226551426802,30.197796298538833,21.743598584287838,1.339134577547612,0.0],[1.017795736909923,-0.262352324724262,360.882173653494647,242.259733954331068,1.339134577544123,0.0],[0.999135387976154,1.609778948624696,302.663228707118833,202.009883384927434,1.339134577529666,0.0],[0.971892143409871,3.497788129152522,0.0,94.457433842183264,1.339134577462523,0.0],[1.010768634469317,-0.543040546140554,0.0,0.0,1.339134578069615,0.0],[1.134108352437552,-0.467017907117752,0.0,0.0,1.339134577483485,0.0],[0.977644755282108,3.136101955368042,0.0,0.0,1.339134577466538,0.0],[1.111077259936243,-3.428499464038011,0.0,0.0,1.339134577522667,0.0],[1.051738603720592,-0.040010213352437,0.0,0.0,1.339134577475948,0.0],[1.103219127668923,-4.007026675851068,0.0,0.0,1.339134577542459,0.0],[1.038080631198203,-10.349509383306344,0.0,0.0,1.339134577554631,0.0],[1.080420599791234,-2.198457380216035,0.0,0.0,1.339134577480682,0.0],[1.000119093706416,-6.569239618098618,0.0,0.0,1.339134577530066,0.0],[1.000119093706416,-6.569239618098618,0.0,0.0,1.339134577530066,0.0],[1.098861780942208,-9.688872435614105,0.0,0.0,1.339134577526916,0.0],[1.032425991202228,-11.843018172083284,0.0,0.0,1.339134577553264,0.0],[1.089441334815244,-8.802817372429967,0.0,0.0,1.339134577594364,0.0],[1.073927530015016,-10.38317070538,0.0,0.0,1.339134577633045,0.0],[1.0,11.675198480204177,-679.999999759153866,238.457149960817333,1.019657152808575,0.0],[0.991709492549788,-3.647024821728906,0.0,0.0,1.339134578665742,0.0],[1.010768634469317,-0.543040546140554,0.0,0.0,1.339134578069615,0.0],[1.134108352437549,-0.467017907117752,0.0,0.0,1.339134577483485,0.0],[1.13067631753588,-0.440929825923652,0.0,0.0,1.339134577483486,0.0],[1.011746207839478,-16.700744689699796,0.0,0.0,1.339134577730424,0.0],[1.0,6.33971866655464,-379.999999701436423,3.933835154435201,1.339134577504022,0.0],[1.0,15.890152501790071,-621.329583950200913,22.232808739619827,1.062246203138856,0.0],[1.0,10.629703326860152,-849.999999632243089,-204.699241649284886,1.128229072789646,0.0],[0.971892143409871,3.497788129152522,0.0,0.0,1.339134577462523,0.0],[1.111077259936241,-3.428499464038011,0.0,0.0,1.339134577522667,0.0],[1.080420599791231,-2.198457380216035,0.0,0.0,1.339134577480682,0.0],[1.0,-4.253185551122268,0.000000003455625,484.483919056778063,1.339134577530517,0.0],[1.122162131036088,-7.509787804794542,0.0,0.0,1.339134577571712,0.0],[1.0,0.0,-503.342804457705824,212.936688017855204,1.032562387068203,0.0],[1.060724679053376,-6.813147710259739,0.0,0.0,1.339134577561962,0.0],[1.022520429923302,-13.205417624304136,0.0,0.0,1.339134577655547,0.0],[1.0,-11.474715061730551,-144.113228479613554,102.916497166382442,1.339134577634184,0.0],[1.0,6.93403718354408,-509.99999971971647,39.112599747388003,1.059831956076493,0.0],[1.0,8.941303298714699,-509.999999633601874,-36.132648981065245,1.123966612160707,0.0],[0.999135387976154,1.609778948624696,0.0,0.0,1.339134577529666,0.0],[1.044327550400118,0.655887132542392,0.0,0.0,1.339134577476439,0.0],[1.085777259494926,-0.44208547076613,0.0,0.0,1.339134577484599,0.0]]}",
+      "orient": "split",
+      "dtype": {
+        "vm_pu": "float64",
+        "va_degree": "float64",
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "lam_p": "float64",
+        "lam_q": "float64"
+      }
+    },
+    "res_line": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_from_mw\",\"q_from_mvar\",\"p_to_mw\",\"q_to_mvar\",\"pl_mw\",\"ql_mvar\",\"i_from_ka\",\"i_to_ka\",\"i_ka\",\"vm_from_pu\",\"va_from_degree\",\"vm_to_pu\",\"va_to_degree\",\"loading_percent\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],\"data\":[[127.225208284052741,53.75454555542099,-125.44543646550521,-42.717829221619368,1.77977181854753,11.036716333801621,0.591241175552858,0.593459043598606,0.593459043598606,1.037463397136347,1.014112037547953,0.991709492549788,-3.647024821728906,76.358376025212792],[127.225208284052741,53.75454555542099,-125.44543646550521,-42.717829221619368,1.77977181854753,11.036716333801621,0.591241175552858,0.593459043598606,0.593459043598606,1.037463397136347,1.014112037547953,0.991709492549788,-3.647024821728906,76.358376025212792],[113.967349606577173,34.975751707911321,-112.15904281358992,-25.292749722533308,1.808306792987253,9.683001985378013,0.503054414491456,0.505184142393694,0.505184142393694,1.052462222274431,4.717039496330386,1.010768634469317,-0.543040546140554,65.000341848296245],[113.967349606577173,34.975751707911321,-112.15904281358992,-25.292749722533308,1.808306792987253,9.683001985378013,0.503054414491456,0.505184142393694,0.505184142393694,1.052462222274431,4.717039496330386,1.010768634469317,-0.543040546140554,65.000341848296245],[-111.253828339167242,-19.821655891240841,112.159042813583071,25.292749722535671,0.905214474415828,5.47109383129483,0.506072001042755,0.505184142393667,0.506072001042755,0.991709492549788,-3.647024821728906,1.010768634469317,-0.543040546140554,65.114579629847526],[-111.253828339167242,-19.821655891240841,112.159042813583071,25.292749722535671,0.905214474415828,5.47109383129483,0.506072001042755,0.505184142393667,0.506072001042755,0.991709492549788,-3.647024821728906,1.010768634469317,-0.543040546140554,65.114579629847526],[-0.000000000003668,-0.000000000001131,0.000883475110081,-3.874781094688626,0.000883475106413,-3.874781094689756,0.000000000000015,0.015219658504886,0.015219658504886,1.134108352437552,-0.467017907117752,1.130676317535887,-0.440929825923652,1.958262191177276],[-0.000000000003668,-0.000000000001131,0.000883475110081,-3.874781094688626,0.000883475106413,-3.874781094689756,0.000000000000015,0.015219658504886,0.015219658504886,1.134108352437552,-0.467017907117752,1.130676317535887,-0.440929825923652,1.958262191177276],[-93.876383187506548,66.98338554124993,95.045883162795391,-61.329368736205282,1.169499975288844,5.654016805044648,0.4785905387981,0.481808800016816,0.481808800016816,1.070164087022477,-12.764933528346402,1.042657401702352,-9.523396195356755,61.992715286388268],[-93.876383187506548,66.98338554124993,95.045883162795391,-61.329368736205282,1.169499975288844,5.654016805044648,0.4785905387981,0.481808800016816,0.481808800016816,1.070164087022477,-12.764933528346402,1.042657401702352,-9.523396195356755,61.992715286388268],[-28.196579123067153,3.00883267879649,28.30307689599535,-5.011545325374562,0.106497772928197,-2.002712646578072,0.11767947407012,0.119345083477921,0.119345083477921,1.070164087022477,-12.764933528346402,1.069618141661627,-11.037778823226152,15.355729867571471],[-28.196579123067153,3.00883267879649,28.30307689599535,-5.011545325374562,0.106497772928197,-2.002712646578072,0.11767947407012,0.119345083477921,0.119345083477921,1.070164087022477,-12.764933528346402,1.069618141661627,-11.037778823226152,15.355729867571471],[-48.668649320746432,-16.450803307348796,49.61411508003853,16.88302457554591,0.945465759292098,0.432221268197114,0.225510125102164,0.216533888922066,0.225510125102164,1.011746207839479,-16.700744689699789,1.074898878973317,-9.7722160701028,29.015628147863389],[-48.668649320746432,-16.450803307348796,49.61411508003853,16.88302457554591,0.945465759292098,0.432221268197114,0.225510125102164,0.216533888922066,0.225510125102164,1.011746207839479,-16.700744689699789,1.074898878973317,-9.7722160701028,29.015628147863389],[-37.51276798341199,-14.575235220121286,38.264779450859443,12.584705878997894,0.752011467447453,-1.990529341123391,0.17665843755599,0.167251004915041,0.17665843755599,1.011746207839479,-16.700744689699789,1.069618141661627,-11.037778823226152,22.730046072144063],[0.820085691665098,-42.97611291800785,-0.656908864924008,42.495567037468987,0.163176826741091,-0.480545880538862,0.18308829429346,0.17559976162544,0.18308829429346,1.042657401702352,-9.523396195356755,1.074898878973317,-9.7722160701028,23.557354079063746],[0.820085691665098,-42.97611291800785,-0.656908864924008,42.495567037468987,0.163176826741091,-0.480545880538862,0.18308829429346,0.17559976162544,0.18308829429346,1.042657401702352,-9.523396195356755,1.074898878973317,-9.7722160701028,23.557354079063746],[-207.52723382767951,161.994079474483925,214.424799560744276,-111.972489440850282,6.897565733064766,50.021590033633643,0.627720244115509,0.630001903393646,0.630001903393646,1.100645244177237,-0.138532234612116,1.007654216125341,10.583213383262281,96.025186887774709],[-207.52723382767951,161.994079474483925,214.424799560744276,-111.972489440850282,6.897565733064766,50.021590033633643,0.627720244115509,0.630001903393646,0.630001903393646,1.100645244177237,-0.138532234612116,1.007654216125341,10.583213383262281,96.025186887774709],[-65.13993145104206,69.070626093224433,65.249093990705433,-87.301871142919211,0.109162539663373,-18.231245049694778,0.140170353751969,0.161864781612962,0.161864781612962,0.977644755282108,3.136101955368042,0.971892143409871,3.497788129152522,16.020458611982331],[184.570536046582958,-309.999881910672457,-179.28210451248944,165.814893412378183,5.288431534093519,-144.184988498294274,0.53265675099322,0.317242781378431,0.53265675099322,0.977644755282108,3.136101955368042,1.111077259936243,-3.428499464038011,52.719346040846936],[123.473593637423988,-246.904082585565988,-121.33282321154239,144.456622765513146,2.140770425881598,-102.447459820052842,0.407564875464764,0.258899800426709,0.407564875464764,0.977644755282108,3.136101955368042,1.051738603720592,-0.040010213352437,40.33846123916873],[81.31841861569383,-218.801222414414184,-79.767331840567124,89.266783270675674,1.551086775126706,-129.534439143738496,0.344622318935197,0.165457607459636,0.344622318935197,0.977644755282108,3.136101955368042,1.044327550400119,0.655887132542392,34.108763761026744],[153.507157688207229,-283.31511330099471,-150.196483705063287,204.562847736149479,3.310673983143943,-78.752265564845232,0.478549329815666,0.348282108098938,0.478549329815666,0.971892143409871,3.497788129152522,1.051738603720592,-0.040010213352437,47.36410018107258],[85.95540910950669,-217.642647272761167,-84.422057150791389,80.548249253501638,1.533351958715301,-137.094398019259529,0.347519966704937,0.161269830922273,0.347519966704937,0.971892143409871,3.497788129152522,1.044327550400119,0.655887132542392,34.395556513005431],[32.811643523995237,-55.44999063918111,-32.765425720444128,-91.347685117572539,0.046217803551109,-146.797675756753648,0.083700386813711,0.126968594418635,0.126968594418635,1.111077259936243,-3.428499464038011,1.103219127668923,-4.007026675851068,12.566631799924657],[146.47046098836168,-110.364902773106991,-144.278632334454954,-214.632304746283864,2.191828653906725,-324.997207519390827,0.238245349398564,0.359589748619139,0.359589748619139,1.111077259936243,-3.428499464038011,1.038080631198203,-10.349509383306344,35.590155113672509],[144.278632334486986,214.632304746291084,-144.278632334487014,-239.458823910194951,-0.000000000000028,-24.826519163903868,0.359589748619172,0.359589748619172,0.359589748619172,1.038080631198203,-10.349509383306344,1.122162131036088,-7.509787804794544,35.590155113675806],[98.666737625670862,-149.709593563604841,-98.063987812086538,19.17654922121072,0.602749813584324,-130.533044342394135,0.246064599363713,0.133488860611268,0.246064599363713,1.051738603720592,-0.040010213352437,1.080420599791234,-2.198457380216035,24.354079316687475],[98.666737625670862,-149.709593563604841,-98.063987812086538,19.17654922121072,0.602749813584324,-130.533044342394135,0.246064599363713,0.133488860611268,0.246064599363713,1.051738603720592,-0.040010213352437,1.080420599791234,-2.198457380216035,24.354079316687475],[348.654642311374232,-292.85048370770545,-346.964246050368786,273.798392807188975,1.690396261005446,-19.052090900516475,0.60828717532254,0.578261163701121,0.60828717532254,1.080420599791234,-2.198457380216035,1.103219127668923,-4.007026675851068,60.204816757211233],[110.741982319137733,-35.868955194089523,-109.554907380328302,-208.155834366156114,1.187074938809431,-244.024789560245637,0.155511345786601,0.339478620728576,0.339478620728576,1.080420599791234,-2.198457380216035,1.000119093706416,-6.569239618098618,33.599669667731405],[109.554907380359467,208.155834366159127,-109.554907380359452,-230.283015281063484,0.000000000000014,-22.127180914904358,0.339478620728601,0.339478620728601,0.339478620728601,1.000119093706416,-6.569239618098618,1.084257230298711,-4.25318555109051,33.599669667733856],[110.741982319137733,-35.868955194089523,-109.554907380328302,-208.155834366156114,1.187074938809431,-244.024789560245637,0.155511345786601,0.339478620728576,0.339478620728576,1.080420599791234,-2.198457380216035,1.000119093706416,-6.569239618098618,33.599669667731405],[109.554907380359467,208.155834366159127,-109.554907380359452,-230.283015281063484,0.000000000000014,-22.127180914904358,0.339478620728601,0.339478620728601,0.339478620728601,1.000119093706416,-6.569239618098618,1.084257230298711,-4.25318555109051,33.599669667733856],[178.433238205893474,-132.364292585628192,-175.808030484215124,-92.662503963849432,2.62520772167835,-225.026796549477638,0.290669571917712,0.261039536629235,0.290669571917712,1.103219127668923,-4.007026675851068,1.098861780942208,-9.688872435614105,28.768826672901309],[175.8080304842224,92.662503963847939,-175.808030484222428,-101.38539702971444,-0.000000000000028,-8.722893065866501,0.261039536629243,0.261039536629243,0.261039536629243,1.098861780942208,-9.688872435614105,1.122162131036088,-7.509787804794544,25.836213727204882],[201.296433564991759,-50.086415103917155,-198.846223142742048,-190.936963197428952,2.450210422249711,-241.023378301346099,0.271392434001975,0.385405533642568,0.385405533642568,1.103219127668923,-4.007026675851068,1.032425991202228,-11.843018172083284,38.145255187835673],[198.846223142796475,190.936963197437933,-198.846223142796475,-212.326352449618014,0.0,-21.389389252180081,0.385405533642632,0.385405533642632,0.385405533642632,1.032425991202228,-11.843018172083284,1.089441334815244,-8.802817372429967,38.145255187841961],[308.609773293828312,-90.077971229661387,-306.144087975487139,8.452737008307587,2.465685318341173,-81.625234221353793,0.427967479084628,0.405757806610618,0.427967479084628,1.084257230298711,-4.25318555109051,1.089441334815244,-8.802817372429967,42.357795300671256],[-94.614007084925163,24.2414051385432,95.589115845390424,-165.033479492883743,0.975108760465261,-140.792074354340542,0.130019610406482,0.262511497734881,0.262511497734881,1.084257230298711,-4.25318555109051,1.048630713003457,-1.802226551426802,25.981900094160949],[162.745563696236019,207.841801030393555,-161.416353181372671,-258.627509536685125,1.329210514863348,-50.78570850629157,0.339540313694356,0.404656682466686,0.404656682466686,1.122162131036088,-7.509787804794544,1.087431745506398,-8.431441319081991,40.050624780260932],[154.901903318728216,131.993922449575194,-154.063657970403113,-196.772289995734241,0.838245348325103,-64.778367546159046,0.261765897430894,0.331099821677977,0.331099821677977,1.122162131036088,-7.509787804794544,1.089441334815244,-8.802817372429967,32.770383629900039],[73.88883441617314,-46.824797413881534,-73.835556542676429,11.627882400977411,0.053277873496711,-35.196915012904121,0.116109646473144,0.099028651926755,0.116109646473144,1.087431745506398,-8.431441319081991,1.089441334815244,-8.802817372429967,11.491874682305442],[153.446703000911953,151.542738187567977,-153.00498374881505,-182.238896808581302,0.441719252096902,-30.696158621013325,0.286256688454602,0.320830761902117,0.320830761902117,1.087431745506398,-8.431441319081991,1.070518604838058,-9.103331690538496,31.754010299742895],[-146.656299777255867,126.809103873188079,147.464908146075828,-187.741902369922116,0.808608368819961,-60.932798496734037,0.257338970747493,0.32485321265432,0.32485321265432,1.087431745506398,-8.431441319081991,1.060724679053376,-6.813147710259739,32.152129675386206],[168.323750630771343,34.401422076774026,-167.763984210292449,-98.796414231961052,0.559766420478894,-64.394992155187026,0.227618106191175,0.26167090687532,0.26167090687532,1.089441334815244,-8.802817372429967,1.073927530015016,-10.38317070538,25.898703175467297],[168.323750630771343,34.401422076774026,-167.763984210292449,-98.796414231961052,0.559766420478894,-64.394992155187026,0.227618106191175,0.26167090687532,0.26167090687532,1.089441334815244,-8.802817372429967,1.073927530015016,-10.38317070538,25.898703175467297],[147.827634841282276,57.289030651363262,-146.514143751431959,-176.233985867359877,1.313491089850316,-118.944955215996615,0.213080751105167,0.323511438716519,0.323511438716519,1.073927530015016,-10.38317070538,1.022520429923302,-13.205417624304136,32.019328496383771],[147.827634841282276,57.289030651363262,-146.514143751431959,-176.233985867359877,1.313491089850316,-118.944955215996615,0.213080751105167,0.323511438716519,0.323511438716519,1.073927530015016,-10.38317070538,1.022520429923302,-13.205417624304136,32.019328496383771],[-222.599335785688396,-11.044045239068744,228.868959416403328,-205.8104103186256,6.269623630714932,-216.854455557694337,0.299545039321148,0.436498726939054,0.436498726939054,1.073927530015016,-10.38317070538,1.017795736909923,-0.262352324724262,43.202169857004279],[-296.129544439709093,67.17123219767096,296.974637167849039,-111.004610680722095,0.845092728139946,-43.833378483051135,0.409413018245155,0.431413983232253,0.431413983232253,1.070518604838058,-9.103331690538496,1.060724679053376,-6.813147710259739,42.698910745938882],[-125.786912143921938,143.289880908599827,126.639222932311569,-198.638048304956186,0.85231078838963,-55.348167396356359,0.262442957745302,0.334075007998652,0.334075007998652,1.048630713003457,-1.802226551426802,1.017795736909923,-0.262352324724262,33.06485070815112],[-103.195178141258154,28.834338064296624,103.66838546324081,-115.61431319551518,0.473207321982656,-86.779975131218549,0.151950542261951,0.224330280458773,0.224330280458773,1.017795736909923,-0.262352324724262,0.999135387976154,1.609778948624696,22.202939624615436],[-103.195178141258154,28.834338064296624,103.66838546324081,-115.61431319551518,0.473207321982656,-86.779975131218549,0.151950542261951,0.224330280458773,0.224330280458773,1.017795736909923,-0.262352324724262,0.999135387976154,1.609778948624696,22.202939624615436],[57.492122026822514,-312.985589795383817,-56.787676497303124,-20.497842168492866,0.70444552951939,-333.483431963876683,0.439818024256987,0.080257847798438,0.439818024256987,1.044327550400119,0.655887132542392,1.085777259494926,-0.44208547076613,43.530695091295037],[57.492122026822514,-312.985589795383817,-56.787676497303124,-20.497842168492866,0.70444552951939,-333.483431963876683,0.439818024256987,0.080257847798438,0.439818024256987,1.044327550400119,0.655887132542392,1.085777259494926,-0.44208547076613,43.530695091295037]]}",
+      "orient": "split",
+      "dtype": {
+        "p_from_mw": "float64",
+        "q_from_mvar": "float64",
+        "p_to_mw": "float64",
+        "q_to_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_from_ka": "float64",
+        "i_to_ka": "float64",
+        "i_ka": "float64",
+        "vm_from_pu": "float64",
+        "va_from_degree": "float64",
+        "vm_to_pu": "float64",
+        "va_to_degree": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_trafo": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_hv_mw\",\"q_hv_mvar\",\"p_lv_mw\",\"q_lv_mvar\",\"pl_mw\",\"ql_mvar\",\"i_hv_ka\",\"i_lv_ka\",\"vm_hv_pu\",\"va_hv_degree\",\"vm_lv_pu\",\"va_lv_degree\",\"loading_percent\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],\"data\":[[-679.999999759143748,335.818739718292932,679.999999759143634,-238.457149960817162,-0.000000000000114,97.36158975747577,3.200289101955029,27.735838883610253,1.052462222274431,4.717039496330386,1.0,11.675198480204177,90.074779006795126],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.991709492549788,-3.647024821728906,0.991709492549788,-3.647024821728906,0.0],[0.000000000000007,-6.80683280755466e-17,-0.000000000000007,6.80683280755466e-17,0.0,1.23259516440783e-32,3.15563107509098e-17,2.73488026507885e-16,1.010768634469317,-0.543040546140554,1.010768634469317,-0.543040546140554,0.000000000000001],[0.000000000000021,0.000000000013409,-0.000000000000021,-0.000000000013409,3.78653234506086e-29,3.23117426778526e-26,0.000000000000053,0.000000000000455,1.134108352437552,-0.467017907117752,1.134108352437549,-0.467017907117752,0.000000000001971],[0.000000000000002,0.000000000013112,-0.000000000000002,-0.000000000013112,0.0,7.9163769560739e-26,0.000000000000052,0.000000000000446,1.130676317535887,-0.440929825923652,1.13067631753588,-0.440929825923652,0.000000000000928],[0.000000000000132,0.000000000002842,-0.000000000000132,-0.000000000002842,-1.0097419586829e-28,2.01948391736579e-27,0.000000000000012,0.000000000000108,1.011746207839479,-16.700744689699789,1.011746207839478,-16.700744689699796,0.000000000000469],[-379.999999701394984,112.245441278496955,379.999999701394927,-3.933835154435151,-0.000000000000057,108.311606124061797,1.687729675112129,14.62699051763845,1.042657401702352,-9.523396195356755,1.0,6.33971866655464,31.66836342297248],[-621.329583950198412,80.214327918671984,621.329583950198185,-22.232808739619912,-0.000000000000227,57.981519179052071,1.631610836991978,23.930292275882341,1.007654216125341,10.583213383262281,1.0,15.890152501790071,62.172723092701929],[-849.999999632220806,-90.038974813299376,849.999999632220806,204.699241649284488,0.0,114.660266835985112,1.261944414804134,33.651851061443587,0.977644755282108,3.136101955368042,1.0,10.629703326860152,87.430073710741411],[-0.000000000000002,-0.000000000001771,0.000000000000002,0.000000000001771,1.26217744835362e-29,6.05845175209737e-28,0.000000000000003,0.00000000000007,0.971892143409871,3.497788129152522,0.971892143409871,3.497788129152522,0.000000000000228],[0.000000000000042,0.000000000008096,-0.000000000000042,-0.000000000008096,0.0,1.29246970711411e-26,0.000000000000011,0.00000000000028,1.111077259936243,-3.428499464038011,1.111077259936241,-3.428499464038011,0.000000000001214],[-0.000000000000043,0.000000000006885,0.000000000000043,-0.000000000006885,-1.0097419586829e-28,1.85792520397653e-26,0.000000000000009,0.000000000000245,1.080420599791234,-2.198457380216035,1.080420599791231,-2.198457380216035,0.000000000000472],[0.000000003455654,525.305192200767465,-0.000000003455654,-484.483919056778404,0.0,40.82127314398906,0.69929230271369,18.647794739031731,1.084257230298711,-4.25318555109051,1.0,-4.253185551122268,84.258072879439752],[-0.000000000000126,0.000000000000017,0.000000000000126,-0.000000000000017,0.0,3.15544362088405e-30,1.64092815904731e-16,0.000000000000004,1.122162131036088,-7.509787804794544,1.122162131036088,-7.509787804794542,0.000000000000016],[-503.342804457705824,287.610690993695357,503.342804457705824,-212.936688017854976,0.0,74.674002975840381,0.788849388750478,21.035983700012753,1.060724679053376,-6.813147710259739,1.0,0.0,91.088481389032054],[-0.000000000000005,0.000000000000972,0.000000000000005,-0.000000000000972,0.0,2.01948391736579e-28,0.000000000000001,0.000000000000035,1.060724679053376,-6.813147710259739,1.060724679053376,-6.813147710259739,0.000000000000153],[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.022520429923302,-13.205417624304136,1.022520429923302,-13.205417624304136,0.0],[-144.113228479610513,109.636723285034321,144.113228479610541,-102.916497166382612,0.000000000000028,6.720226118651709,0.255605604446799,6.816149451914641,1.022520429923302,-13.205417624304136,1.0,-11.474715061730551,25.298393920069103],[-509.999999719714083,104.520048540664689,509.999999719713969,-39.112599747387748,-0.000000000000114,65.407448793276942,0.738283193142921,19.687551817144563,1.017795736909923,-0.262352324724262,1.0,6.93403718354408,85.24960005984839],[-509.999999633600737,29.218743006100237,509.999999633600737,36.132648981065174,0.0,65.351391987165414,0.737966756179693,19.679113498125147,0.999135387976154,1.609778948624696,1.0,8.941303298714699,85.213061066668132],[0.00000000000001,-0.000000000001363,-0.00000000000001,0.000000000001363,0.0,2.01948391736579e-28,0.000000000000002,0.000000000000053,0.999135387976154,1.609778948624696,0.999135387976154,1.609778948624696,0.000000000000227],[-0.000000000000006,0.000000000003799,0.000000000000006,-0.000000000003799,0.0,3.23117426778526e-27,0.000000000000005,0.00000000000014,1.044327550400119,0.655887132542392,1.044327550400118,0.655887132542392,0.000000000000606],[-0.000000000000031,0.00000000000395,0.000000000000031,-0.00000000000395,-6.31088724176809e-30,8.07793566946316e-28,0.000000000000005,0.00000000000014,1.085777259494926,-0.44208547076613,1.085777259494926,-0.44208547076613,0.000000000000081],[525.77738278348204,796.673535630734591,-525.777382783482267,-735.877509373973908,-0.000000000000227,60.796026256760683,1.409251863233124,3.871583441865629,0.977644755282108,3.136101955368042,1.037463397136347,1.014112037547953,78.108666488988092],[-304.711660788407187,493.802197874497324,304.7116607884073,-471.069522675392932,0.000000000000114,22.732675199104392,0.861740082942085,2.367425386017457,0.971892143409871,3.497788129152522,1.052462222274431,4.717039496330386,47.76248341037789],[74.195831664957396,-49.600283374354206,-74.195831664957382,50.355020628995142,0.000000000000014,0.754737254640936,0.122481407738636,0.352211304751926,1.051738603720592,-0.040010213352437,1.130676317535887,-0.440929825923652,10.183320349736098],[-374.010631325214035,326.235295653609853,374.010631325214035,-303.26830242322535,0.0,22.966993230384503,0.663026005528316,1.14809583117283,1.080420599791234,-2.198457380216035,1.100645244177237,-0.138532234612116,55.125151965173934],[198.121012184887206,160.107589441290486,-198.121012184887235,-154.640630417977462,-0.000000000000028,5.466959023313024,0.337483302775641,1.038410162386587,1.089441334815244,-8.802817372429967,1.074898878973317,-9.7722160701028,23.381529084542422],[198.121012184887206,160.107589441290486,-198.121012184887235,-154.640630417977462,-0.000000000000028,5.466959023313024,0.337483302775641,1.038410162386587,1.089441334815244,-8.802817372429967,1.074898878973317,-9.7722160701028,23.381529084542422],[131.236017261880022,47.029406200141736,-131.236017261880022,-45.344301324687393,0.0,1.685104875454343,0.187366890276713,0.576513508543731,1.073927530015016,-10.38317070538,1.069618141661627,-11.037778823226152,12.981158944617965],[131.236017261880022,47.029406200141736,-131.236017261880022,-45.344301324687393,0.0,1.685104875454343,0.187366890276713,0.576513508543731,1.073927530015016,-10.38317070538,1.069618141661627,-11.037778823226152,12.981158944617965]]}",
+      "orient": "split",
+      "dtype": {
+        "p_hv_mw": "float64",
+        "q_hv_mvar": "float64",
+        "p_lv_mw": "float64",
+        "q_lv_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_hv_ka": "float64",
+        "i_lv_ka": "float64",
+        "vm_hv_pu": "float64",
+        "va_hv_degree": "float64",
+        "vm_lv_pu": "float64",
+        "va_lv_degree": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_trafo3w": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_hv_mw\",\"q_hv_mvar\",\"p_mv_mw\",\"q_mv_mvar\",\"p_lv_mw\",\"q_lv_mvar\",\"pl_mw\",\"ql_mvar\",\"i_hv_ka\",\"i_mv_ka\",\"i_lv_ka\",\"vm_hv_pu\",\"va_hv_degree\",\"vm_mv_pu\",\"va_mv_degree\",\"vm_lv_pu\",\"va_lv_degree\",\"va_internal_degree\",\"vm_internal_pu\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_hv_mw": "float64",
+        "q_hv_mvar": "float64",
+        "p_mv_mw": "float64",
+        "q_mv_mvar": "float64",
+        "p_lv_mw": "float64",
+        "q_lv_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_hv_ka": "float64",
+        "i_mv_ka": "float64",
+        "i_lv_ka": "float64",
+        "vm_hv_pu": "float64",
+        "va_hv_degree": "float64",
+        "vm_mv_pu": "float64",
+        "va_mv_degree": "float64",
+        "vm_lv_pu": "float64",
+        "va_lv_degree": "float64",
+        "va_internal_degree": "float64",
+        "vm_internal_pu": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_impedance": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_from_mw\",\"q_from_mvar\",\"p_to_mw\",\"q_to_mvar\",\"pl_mw\",\"ql_mvar\",\"i_from_ka\",\"i_to_ka\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_from_mw": "float64",
+        "q_from_mvar": "float64",
+        "p_to_mw": "float64",
+        "q_to_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_from_ka": "float64",
+        "i_to_ka": "float64"
+      }
+    },
+    "res_ext_grid": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[0],\"data\":[[503.342804457705824,-212.936688017855147]]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_load": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],\"data\":[[271.326966215411176,197.836298104069243],[147.353639757541316,65.299279541284918],[473.398529609428181,125.078970225721264],[74.19406471495877,-42.605458439453024],[244.145924621365793,-139.984436440035239],[134.850066625024681,47.476841834834026],[188.268061992417216,96.365522029974713],[298.327611939761994,190.524077609980168],[167.601101280971193,88.126987421166874],[41.043836329834079,-20.719856525702031],[192.479984828669586,143.730650963035742],[49.205144937708582,19.90813405671484],[113.575352994628758,40.995684337003951],[5.114048548277811,1.097404452490965],[2.439195803600228,1.008497459984934],[80.737115541588281,27.1004648898829],[449.134528188734123,115.067664610934884],[58.903259143440003,11.135822057081739],[437.141515982568364,242.831248449689241],[30.197796298538904,21.74359858428793],[360.882173653494647,242.259733954331125],[302.663228707119174,202.009883384927349]]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_motor": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_sgen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_storage": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_shunt": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\",\"vm_pu\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11],\"data\":[[0.0,430.532120159075646,1.037463397136347],[0.0,0.0,1.130676317535887],[0.0,0.0,1.070164087022477],[0.0,0.0,1.042657401702352],[0.0,0.0,1.074898878973317],[0.0,0.0,1.069618141661627],[0.0,436.248013009885483,1.044327550400119],[0.0,0.0,1.084257230298711],[0.0,0.0,1.087431745506398],[0.0,0.0,1.070518604838058],[0.0,0.0,1.022520429923302],[0.0,94.457433842183249,0.971892143409871]]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "vm_pu": "float64"
+      }
+    },
+    "res_gen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\",\"va_degree\",\"vm_pu\"],\"index\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],\"data\":[[679.999999759153866,-238.457149960817333,11.675198480204177,1.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[379.999999701436423,-3.933835154435201,6.33971866655464,1.0],[621.329583950201027,-22.232808739619827,15.890152501790071,1.0],[849.999999632243202,204.699241649284886,10.629703326860152,1.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[-0.000000003455638,-484.48391905677812,-4.253185551122268,1.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[144.113228479613412,-102.916497166382442,-11.474715061730551,1.0],[509.999999719716584,-39.112599747388003,6.93403718354408,1.0],[509.99999963360176,36.132648981065245,8.941303298714699,1.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "va_degree": "float64",
+        "vm_pu": "float64"
+      }
+    },
+    "res_ward": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\",\"vm_pu\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "vm_pu": "float64"
+      }
+    },
+    "res_xward": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\",\"vm_pu\",\"va_internal_degree\",\"vm_internal_pu\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64",
+        "vm_pu": "float64",
+        "va_internal_degree": "float64",
+        "vm_internal_pu": "float64"
+      }
+    },
+    "res_dcline": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_from_mw\",\"q_from_mvar\",\"p_to_mw\",\"q_to_mvar\",\"pl_mw\",\"vm_from_pu\",\"va_from_degree\",\"vm_to_pu\",\"va_to_degree\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_from_mw": "float64",
+        "q_from_mvar": "float64",
+        "p_to_mw": "float64",
+        "q_to_mvar": "float64",
+        "pl_mw": "float64",
+        "vm_from_pu": "float64",
+        "va_from_degree": "float64",
+        "vm_to_pu": "float64",
+        "va_to_degree": "float64"
+      }
+    },
+    "res_asymmetric_load": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_asymmetric_sgen": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_switch": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"i_ka\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "i_ka": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_bus_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"vm_pu\",\"va_degree\",\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "vm_pu": "float64",
+        "va_degree": "float64",
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_line_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_from_mw\",\"q_from_mvar\",\"p_to_mw\",\"q_to_mvar\",\"pl_mw\",\"ql_mvar\",\"i_from_ka\",\"i_to_ka\",\"i_ka\",\"vm_from_pu\",\"va_from_degree\",\"vm_to_pu\",\"va_to_degree\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_from_mw": "float64",
+        "q_from_mvar": "float64",
+        "p_to_mw": "float64",
+        "q_to_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_from_ka": "float64",
+        "i_to_ka": "float64",
+        "i_ka": "float64",
+        "vm_from_pu": "float64",
+        "va_from_degree": "float64",
+        "vm_to_pu": "float64",
+        "va_to_degree": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_trafo_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_hv_mw\",\"q_hv_mvar\",\"p_lv_mw\",\"q_lv_mvar\",\"pl_mw\",\"ql_mvar\",\"i_hv_ka\",\"i_lv_ka\",\"vm_hv_pu\",\"va_hv_degree\",\"vm_lv_pu\",\"va_lv_degree\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_hv_mw": "float64",
+        "q_hv_mvar": "float64",
+        "p_lv_mw": "float64",
+        "q_lv_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_hv_ka": "float64",
+        "i_lv_ka": "float64",
+        "vm_hv_pu": "float64",
+        "va_hv_degree": "float64",
+        "vm_lv_pu": "float64",
+        "va_lv_degree": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_trafo3w_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_hv_mw\",\"q_hv_mvar\",\"p_mv_mw\",\"q_mv_mvar\",\"p_lv_mw\",\"q_lv_mvar\",\"pl_mw\",\"ql_mvar\",\"i_hv_ka\",\"i_mv_ka\",\"i_lv_ka\",\"vm_hv_pu\",\"va_hv_degree\",\"vm_mv_pu\",\"va_mv_degree\",\"vm_lv_pu\",\"va_lv_degree\",\"va_internal_degree\",\"vm_internal_pu\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_hv_mw": "float64",
+        "q_hv_mvar": "float64",
+        "p_mv_mw": "float64",
+        "q_mv_mvar": "float64",
+        "p_lv_mw": "float64",
+        "q_lv_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_hv_ka": "float64",
+        "i_mv_ka": "float64",
+        "i_lv_ka": "float64",
+        "vm_hv_pu": "float64",
+        "va_hv_degree": "float64",
+        "vm_mv_pu": "float64",
+        "va_mv_degree": "float64",
+        "vm_lv_pu": "float64",
+        "va_lv_degree": "float64",
+        "va_internal_degree": "float64",
+        "vm_internal_pu": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_impedance_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_from_mw\",\"q_from_mvar\",\"p_to_mw\",\"q_to_mvar\",\"pl_mw\",\"ql_mvar\",\"i_from_ka\",\"i_to_ka\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_from_mw": "float64",
+        "q_from_mvar": "float64",
+        "p_to_mw": "float64",
+        "q_to_mvar": "float64",
+        "pl_mw": "float64",
+        "ql_mvar": "float64",
+        "i_from_ka": "float64",
+        "i_to_ka": "float64"
+      }
+    },
+    "res_switch_est": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"i_ka\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "i_ka": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_bus_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_line_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_trafo_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_trafo3w_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_ext_grid_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_gen_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_sgen_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_switch_sc": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_bus_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"vm_a_pu\",\"va_a_degree\",\"vm_b_pu\",\"va_b_degree\",\"vm_c_pu\",\"va_c_degree\",\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "vm_a_pu": "float64",
+        "va_a_degree": "float64",
+        "vm_b_pu": "float64",
+        "va_b_degree": "float64",
+        "vm_c_pu": "float64",
+        "va_c_degree": "float64",
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64"
+      }
+    },
+    "res_line_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_a_from_mw\",\"q_a_from_mvar\",\"p_b_from_mw\",\"q_b_from_mvar\",\"q_c_from_mvar\",\"p_a_to_mw\",\"q_a_to_mvar\",\"p_b_to_mw\",\"q_b_to_mvar\",\"p_c_to_mw\",\"q_c_to_mvar\",\"p_a_l_mw\",\"q_a_l_mvar\",\"p_b_l_mw\",\"q_b_l_mvar\",\"p_c_l_mw\",\"q_c_l_mvar\",\"i_a_from_ka\",\"i_a_to_ka\",\"i_b_from_ka\",\"i_b_to_ka\",\"i_c_from_ka\",\"i_c_to_ka\",\"i_a_ka\",\"i_b_ka\",\"i_c_ka\",\"i_n_from_ka\",\"i_n_to_ka\",\"i_n_ka\",\"loading_a_percent\",\"loading_b_percent\",\"loading_c_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_a_from_mw": "float64",
+        "q_a_from_mvar": "float64",
+        "p_b_from_mw": "float64",
+        "q_b_from_mvar": "float64",
+        "q_c_from_mvar": "float64",
+        "p_a_to_mw": "float64",
+        "q_a_to_mvar": "float64",
+        "p_b_to_mw": "float64",
+        "q_b_to_mvar": "float64",
+        "p_c_to_mw": "float64",
+        "q_c_to_mvar": "float64",
+        "p_a_l_mw": "float64",
+        "q_a_l_mvar": "float64",
+        "p_b_l_mw": "float64",
+        "q_b_l_mvar": "float64",
+        "p_c_l_mw": "float64",
+        "q_c_l_mvar": "float64",
+        "i_a_from_ka": "float64",
+        "i_a_to_ka": "float64",
+        "i_b_from_ka": "float64",
+        "i_b_to_ka": "float64",
+        "i_c_from_ka": "float64",
+        "i_c_to_ka": "float64",
+        "i_a_ka": "float64",
+        "i_b_ka": "float64",
+        "i_c_ka": "float64",
+        "i_n_from_ka": "float64",
+        "i_n_to_ka": "float64",
+        "i_n_ka": "float64",
+        "loading_a_percent": "float64",
+        "loading_b_percent": "float64",
+        "loading_c_percent": "float64"
+      }
+    },
+    "res_trafo_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_a_hv_mw\",\"q_a_hv_mvar\",\"p_b_hv_mw\",\"q_b_hv_mvar\",\"p_c_hv_mw\",\"q_c_hv_mvar\",\"p_a_lv_mw\",\"q_a_lv_mvar\",\"p_b_lv_mw\",\"q_b_lv_mvar\",\"p_c_lv_mw\",\"q_c_lv_mvar\",\"p_a_l_mw\",\"q_a_l_mvar\",\"p_b_l_mw\",\"q_b_l_mvar\",\"p_c_l_mw\",\"q_c_l_mvar\",\"i_a_hv_ka\",\"i_a_lv_ka\",\"i_b_hv_ka\",\"i_b_lv_ka\",\"i_c_hv_ka\",\"i_c_lv_ka\",\"loading_a_percent\",\"loading_b_percent\",\"loading_c_percent\",\"loading_percent\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_a_hv_mw": "float64",
+        "q_a_hv_mvar": "float64",
+        "p_b_hv_mw": "float64",
+        "q_b_hv_mvar": "float64",
+        "p_c_hv_mw": "float64",
+        "q_c_hv_mvar": "float64",
+        "p_a_lv_mw": "float64",
+        "q_a_lv_mvar": "float64",
+        "p_b_lv_mw": "float64",
+        "q_b_lv_mvar": "float64",
+        "p_c_lv_mw": "float64",
+        "q_c_lv_mvar": "float64",
+        "p_a_l_mw": "float64",
+        "q_a_l_mvar": "float64",
+        "p_b_l_mw": "float64",
+        "q_b_l_mvar": "float64",
+        "p_c_l_mw": "float64",
+        "q_c_l_mvar": "float64",
+        "i_a_hv_ka": "float64",
+        "i_a_lv_ka": "float64",
+        "i_b_hv_ka": "float64",
+        "i_b_lv_ka": "float64",
+        "i_c_hv_ka": "float64",
+        "i_c_lv_ka": "float64",
+        "loading_a_percent": "float64",
+        "loading_b_percent": "float64",
+        "loading_c_percent": "float64",
+        "loading_percent": "float64"
+      }
+    },
+    "res_ext_grid_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64"
+      }
+    },
+    "res_shunt_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[],\"index\":[],\"data\":[]}",
+      "orient": "split"
+    },
+    "res_load_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_sgen_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_storage_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_mw\",\"q_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_mw": "float64",
+        "q_mvar": "float64"
+      }
+    },
+    "res_asymmetric_load_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64"
+      }
+    },
+    "res_asymmetric_sgen_3ph": {
+      "_module": "pandas.core.frame",
+      "_class": "DataFrame",
+      "_object": "{\"columns\":[\"p_a_mw\",\"q_a_mvar\",\"p_b_mw\",\"q_b_mvar\",\"p_c_mw\",\"q_c_mvar\"],\"index\":[],\"data\":[]}",
+      "orient": "split",
+      "dtype": {
+        "p_a_mw": "float64",
+        "q_a_mvar": "float64",
+        "p_b_mw": "float64",
+        "q_b_mvar": "float64",
+        "p_c_mw": "float64",
+        "q_c_mvar": "float64"
+      }
+    },
+    "user_pf_options": {}
+  }
+}

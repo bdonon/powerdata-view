@@ -84,4 +84,4 @@ python main.py --config-name=config_2.yaml
 # Contact
 
 If you have any trouble using this tool, or if you have any question, please feel free to 
-contact me at [balthazar.donon@uliege.be](mailto:balthazar.donon@uliege.be)
+contact me at [balthazar.donon@uliege.be](mailto:balthazar.donon@uliege.be).

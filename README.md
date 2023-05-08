@@ -16,11 +16,11 @@ It is compatible with datasets generated using powerdata-gen.
 
 First, you need to clone the repository :
 ```
-git clone https://github.com/bdonon/powerdata_view.git
+git clone https://github.com/bdonon/powerdata-view.git
 ```
 Then, go inside the project :
 ```
-cd powerdata_view
+cd powerdata-view
 ```
 
 ## Virtual Environment

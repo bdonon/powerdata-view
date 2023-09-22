@@ -1,3 +1,5 @@
+import numpy as np
+
 from powerdata_view.plot import plot_float_summary, plot_float_summary_grid, plot_float_correlation, \
      plot_bool_summary, plot_float_summary_boxplot
 from powerdata_view.utils import slugify, make_dir
@@ -43,23 +45,26 @@ def display_plot(key, color_dict, df, path, statistics="summary", val_range=None
         plt.style.use('dark_background')
     figsize = kwargs.get("figsize", [6.4, 4.8])
     colors = [color_dict[dataset_name] for dataset_name in df.columns]#plt.cm.tab10
+    grid = kwargs.get("grid", None)
+    extension = kwargs.get("extension", ".pdf")
+    title = kwargs.get("title", True)
 
     data_type = df.stack().dtype
     if data_type in ['bool', 'object']:
         if statistics == "summary":
-            plot_bool_summary(df, key, path, figsize, colors)
+            plot_bool_summary(df, key, path, figsize, colors, extension=extension, title=title)
         elif statistics == "correlation":
             pass ## Correlation plots for bool are not that interesting.
             #plot_bool_correlation(df, key, path, figsize, dpi, colors)
     elif data_type == 'float':
         if statistics == "summary":
-            plot_float_summary(df, val_range, key, path, figsize, colors, log=True)
-            plot_float_summary(df, val_range, key, path, figsize, colors, log=False)
-            plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=True)
-            plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False)
-            plot_float_summary_boxplot(df, val_range, key, path, figsize, colors)
+            plot_float_summary(df, val_range, key, path, figsize, colors, log=True, extension=extension, title=title)
+            plot_float_summary(df, val_range, key, path, figsize, colors, log=False, extension=extension, title=title)
+            plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=True, grid=grid, extension=extension, title=title)
+            plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False, grid=grid, extension=extension, title=title)
+            plot_float_summary_boxplot(df, val_range, key, path, figsize, colors, extension=extension, title=title)
         elif statistics == "correlation":
-            plot_float_correlation(df, key, path, figsize, colors, night_mode)
+            plot_float_correlation(df, key, path, figsize, colors, night_mode, extension=extension, title=title)
 
 
 def aggregate_versions(metrics_name, df_dict, focus="all"):
@@ -82,7 +87,14 @@ def aggregate_versions(metrics_name, df_dict, focus="all"):
         val_range[metrics_name] = [_min - 0.1 * (_max - _min), _max + 0.1 * (_max - _min)]
     elif focus == "snapshot":
         for snapshot_name in snapshot_list:
-            out[metrics_name+' - '+snapshot_name] = pd.DataFrame({k: v.loc[snapshot_name] for k, v in df_dict.items()})
+            dict_ = {}
+            for k, v in df_dict.items():
+                if snapshot_name in v.index.to_list():
+                    dict_[k] = v.loc[snapshot_name]
+                else:
+                    dict_[k] = np.nan
+            out[metrics_name + ' - ' + snapshot_name] = pd.DataFrame(dict_)
+            # out[metrics_name+' - '+snapshot_name] = pd.DataFrame({k: v.loc[snapshot_name] for k, v in df_dict.items()})
             val_range[metrics_name+' - '+snapshot_name] = [_min - 0.1 * (_max - _min), _max + 0.1 * (_max - _min)]
     elif focus == "object":
         for object_name in object_list:

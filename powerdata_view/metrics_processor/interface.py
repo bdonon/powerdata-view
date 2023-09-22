@@ -41,4 +41,4 @@ class MetricsProcessorInterface(ABC):
         for key, metrics in self.metrics_dict.items():
             metrics_val, metrics_col = metrics(power_grid)
             r = pd.DataFrame([metrics_val], columns=[metrics_col], index=[sample_name])
-            df_dict[key] = pd.concat([df_dict[key], r])
+            df_dict[key] = pd.concat([r, df_dict[key]], axis=0, join='outer')

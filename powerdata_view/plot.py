@@ -7,13 +7,14 @@ import pandas as pd
 import os
 import gc
 
-def plot_float_summary(df, val_range, key, path, figsize, colors, log=False):
+def plot_float_summary(df, val_range, key, path, figsize, colors, log=False, extension=".pdf", title=True):
     """Plots of the different histogram versions."""
     fig, ax = plt.subplots(figsize=figsize)
-    if log:
-        plt.title(key + ' - Log Scale')  # , loc='center', wrap=True)
-    else:
-        plt.title(key)
+    if title:
+        if log:
+            plt.title(key + ' - Log Scale')  # , loc='center', wrap=True)
+        else:
+            plt.title(key)
     #_range = [df.min().min(), df.max().max()]
     for i, name in enumerate(df.columns):
         data = df[name].astype(float).to_numpy()
@@ -24,9 +25,9 @@ def plot_float_summary(df, val_range, key, path, figsize, colors, log=False):
     if log:
         plt.yscale('log')
         ax.yaxis.set_ticks([])
-        name = os.path.join(path, slugify(key) + '_log_scale.pdf')
+        name = os.path.join(path, slugify(key) + '_log_scale' + extension)
     else:
-        name = os.path.join(path, slugify(key) + '.pdf')
+        name = os.path.join(path, slugify(key) + extension)
     plt.tight_layout()
     plt.savefig(name, bbox_inches='tight')
     plt.cla()
@@ -35,7 +36,7 @@ def plot_float_summary(df, val_range, key, path, figsize, colors, log=False):
     gc.collect()
 
 
-def plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False):
+def plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False, grid=None, extension=".pdf", title=True):
     """Grid of plots of the different histogram versions."""
 
     def get_layout(df):
@@ -49,12 +50,16 @@ def plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False
         elif N <= (n + 1) ** 2:
             return n + 1, n + 1
 
-    nx, ny = get_layout(df)
-    fig, axs = plt.subplots(nx, ny, figsize=figsize)
-    if log:
-        fig.suptitle(key+' - Log Scale')#, loc='center', wrap=True)
+    if grid is None:
+        nx, ny = get_layout(df)
     else:
-        fig.suptitle(key)
+        nx, ny = grid[0], grid[1]
+    fig, axs = plt.subplots(nx, ny, figsize=figsize)
+    if title:
+        if log:
+            fig.suptitle(key+' - Log Scale')#, loc='center', wrap=True)
+        else:
+            fig.suptitle(key)
     #_range = [df.min().min(), df.max().max()]
     y_max = 0
     y_max_log = 0
@@ -93,9 +98,9 @@ def plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False
 
 
     if log:
-        name = os.path.join(path, slugify(key) + '_grid_log_scale.pdf')
+        name = os.path.join(path, slugify(key) + '_grid_log_scale' + extension)
     else:
-        name = os.path.join(path, slugify(key) + '_grid.pdf')
+        name = os.path.join(path, slugify(key) + '_grid' + extension)
     plt.tight_layout()
     plt.savefig(name, bbox_inches='tight')
     plt.cla()
@@ -104,10 +109,11 @@ def plot_float_summary_grid(df, val_range, key, path, figsize, colors, log=False
     gc.collect()
 
 
-def plot_float_summary_boxplot(df, val_range, key, path, figsize, colors):
+def plot_float_summary_boxplot(df, val_range, key, path, figsize, colors, extension=".pdf", title=True):
     """Boxplots of the different histogram versions."""
     fig, ax = plt.subplots(figsize=figsize)
-    ax.set_title(key)#, loc='center', wrap=True)
+    if title:
+        ax.set_title(key)#, loc='center', wrap=True)
     for i, c in enumerate(df.columns):
         data = df[c]
         box = plt.boxplot([data[~np.isnan(data)]], positions=[0.25*i], patch_artist=True, labels=[c])
@@ -138,14 +144,14 @@ def plot_float_summary_boxplot(df, val_range, key, path, figsize, colors):
     #     box['caps'][2*i+1].set_color(colors(i))
     #     box['fliers'][i].set_color(colors(i))
     plt.tight_layout()
-    plt.savefig(os.path.join(path, slugify(key) + '_boxplot.pdf'), bbox_inches='tight')
+    plt.savefig(os.path.join(path, slugify(key) + '_boxplot' + extension), bbox_inches='tight')
     plt.cla()
     plt.clf()
     plt.close()
     gc.collect()
 
 
-def plot_float_correlation(df, key, path, figsize, colors, night_mode):
+def plot_float_correlation(df, key, path, figsize, colors, night_mode, extension=".pdf", title=True):
     """Correlation scatter plot for float metrics."""
     _min, _max = df.min().min(), df.max().max()
     _range = [_min - 0.1*(_max - _min), _max + 0.1*(_max - _min)]
@@ -167,49 +173,56 @@ def plot_float_correlation(df, key, path, figsize, colors, night_mode):
                 ax.axline((0, 0), slope=1., color=color, linewidth=1., alpha=0.5)
                 ax.set_ylim(_range)
             ax.tick_params(axis='x', labelrotation=0)
-
-    plt.suptitle(key)#, loc='center', wrap=True)
+    if title:
+        plt.suptitle(key)#, loc='center', wrap=True)
     plt.tight_layout()
-    plt.savefig(os.path.join(path, slugify(key) + '.pdf'), bbox_inches='tight')
+    plt.savefig(os.path.join(path, slugify(key) + extension), bbox_inches='tight')
     plt.cla()
     plt.clf()
     plt.close()
     gc.collect()
 
 
-def plot_bool_summary(df, key, path, figsize, colors):
+def plot_bool_summary(df, key, path, figsize, colors, extension=".pdf", title=True):
     """Bar plot for bool metrics."""
     fig, ax = plt.subplots(figsize=figsize)
-    ax.set_title(key)#, loc='center', wrap=True)
+    if title:
+        ax.set_title(key)#, loc='center', wrap=True)
     percentage = pd.DataFrame((df.sum() / df.count()), columns=['Percentage'])
+
+
+    div = 10000 - df.count()
+    percentage = pd.DataFrame(((df.sum() + div) / 10000), columns=['Percentage'])
+    # # TODO : il faut trouver un moyen de capturer les divergences plutôt que juste les exclure.
     percentage.plot(kind='bar', legend=False, stacked=True, ax=ax, ylim=[0, 1.1])
     for i, bar in enumerate(ax.patches):
         bar.set_color(colors[i])
         p = percentage.iloc[i].values[0]
-        ax.text(i, p, '{:.2%}'.format(p), horizontalalignment='center', verticalalignment='bottom')
+        ax.text(i, p+0.03, '{:.2%}'.format(p), horizontalalignment='center', verticalalignment='bottom')
     #ax.set_ylim([0, 1.1])
 
     ax.tick_params(axis='x', labelrotation=0)
     ax.set_yticks([0., 0.5, 1.])  # Useless, but avoids a UserWarning.
     ax.set_yticklabels([f'{x:.0%}' for x in ax.get_yticks().tolist()])
     plt.tight_layout()
-    plt.savefig(os.path.join(path, slugify(key) + '.pdf'), bbox_inches='tight')
+    plt.savefig(os.path.join(path, slugify(key) + extension), bbox_inches='tight')
     plt.cla()
     plt.clf()
     plt.close()
     gc.collect()
 
 
-def plot_bool_correlation(df, key, path, figsize, colors):
+def plot_bool_correlation(df, key, path, figsize, colors, extension=".pdf", title=True):
     """Correlation matrix for boolean metrics."""
     fig, ax = plt.subplots(figsize=figsize)
-    ax.set_title(key)#, loc='center', wrap=True)
+    if title:
+        ax.set_title(key)#, loc='center', wrap=True)
     im = ax.matshow(df.corr(), vmin=-1, vmax=1)
     ax.set_xticks(range(len(df.columns)), df.columns)
     ax.set_yticks(range(len(df.columns)), df.columns)
     fig.colorbar(im)
     plt.tight_layout()
-    plt.savefig(os.path.join(path, slugify(key) + '.pdf'), bbox_inches='tight')
+    plt.savefig(os.path.join(path, slugify(key) + extension), bbox_inches='tight')
     plt.cla()
     plt.clf()
     plt.close()

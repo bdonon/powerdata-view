@@ -6,7 +6,8 @@ warnings.filterwarnings('ignore')
 
 import hydra
 import os
-os.environ["HYDRA_FULL_ERROR"]="1"
+os.environ["HYDRA_FULL_ERROR"] = "1"
+
 
 @hydra.main(version_base=None, config_path="config", config_name="config")
 def main(cfg):

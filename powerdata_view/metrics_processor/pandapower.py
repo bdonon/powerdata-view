@@ -119,6 +119,9 @@ class PandaPowerMetricsProcessor(MetricsProcessorInterface, ABC):
         Overrides run_powerflow of abstract base class.
         """
         pp.runpp(power_grid, init='results', enforce_q_lims=True, delta_q=0.)
+        if (power_grid.res_bus.vm_pu > 1.2).any():
+            raise Exception
+
 
     def load_power_grid(self, filepath):
         """Loads a power grid in memory.
@@ -546,15 +549,15 @@ def violation_count(power_grid):
 
 def current_cost(power_grid):
     """Current cost for each snapshot, using epsilon as threshold. Only in_service objects are considered."""
-    epsilon = 0.1
+    epsilon = 0.05
 
     line_in_service_ = power_grid.line.in_service.values
-    line_normalized_currents = power_grid.res_line.loading_percent.loc[line_in_service_].values / 100.
-    line_penalized_currents = np.maximum(0, line_normalized_currents -1 + 2 * epsilon)
+    line_normalized_currents = (0.5 + power_grid.res_line.loading_percent.loc[line_in_service_].values / 200.)**2
+    line_penalized_currents = np.maximum(0, line_normalized_currents - 1 + epsilon)
 
     trafo_in_service_ = power_grid.trafo.in_service.values
-    trafo_normalized_currents = power_grid.res_trafo.loading_percent.loc[trafo_in_service_].values / 100.
-    trafo_penalized_currents = np.maximum(0, trafo_normalized_currents - 1 + 2 * epsilon)
+    trafo_normalized_currents = (0.5 + power_grid.res_trafo.loading_percent.loc[trafo_in_service_].values / 200.)**2
+    trafo_penalized_currents = np.maximum(0, trafo_normalized_currents - 1 + epsilon)
 
     penalized_currents = np.concatenate([line_penalized_currents, trafo_penalized_currents])
     return np.mean(penalized_currents**2), '0'
@@ -562,7 +565,7 @@ def current_cost(power_grid):
 
 def voltage_cost(power_grid):
     """Voltage cost for each snapshot, using epsilon as threshold. Only in_service objects are considered."""
-    epsilon = 0.1
+    epsilon = 0.05
 
     bus_in_service_ = power_grid.bus.in_service.values
     bus_voltage_ = power_grid.res_bus.vm_pu.loc[bus_in_service_].values
@@ -608,16 +611,14 @@ def joule_cost(power_grid):
 
 def cost(power_grid):
     """Aggregated cost for each snapshot."""
-    beta = 1.
-    lambda_I = 1.
-    lambda_V = 1.
+    lambda_I = 200.
+    lambda_V = 200.
 
     c_J, _ = joule_cost(power_grid)
-    c_Q, _ = reactive_cost(power_grid)
     c_I, _ = current_cost(power_grid)
     c_V, _ = voltage_cost(power_grid)
 
-    return c_J + beta * c_Q + lambda_I * c_I + lambda_V * c_V, '0'
+    return c_J + lambda_I * c_I + lambda_V * c_V, '0'
 
 
 def line_n1(power_grid):
